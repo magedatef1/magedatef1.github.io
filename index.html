@@ -7,7 +7,7 @@
     <style>
         body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; padding-top: 20px; }
-        img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
+        img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
         h2 { color: white; margin: 10px 0 5px 0; font-size: 26px; }
         .desc { color: #ccc; margin-top: 0; margin-bottom: 25px; font-size: 16px; }
         .links-container { display: flex; flex-direction: column; gap: 12px; }
@@ -23,6 +23,7 @@
         .link-btn:hover { transform: scale(1.02); opacity: 0.9; }
         
         /* ألوان الأزرار المخصصة */
+        .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
         .twitter { background-color: #1da1f2; }
@@ -37,12 +38,12 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/magedatef1.png" alt="ماجد عاطف">
-        <h2> Maged Atef</h2>
-        
+        <img src="https://github.com/magedatef1.png" alt="ماجد عاطف" class="profile-img">
+        <h2>ماجد عاطف</h2>
         <p class="desc">صفحاتي الخاصة علي التواصل الاجتماعي</p>
         
         <div class="links-container">
+            <a href="https://www.tiktok.com/@magedatef12?_r=1&_t=ZS-943ocxtu74n" class="link-btn tiktok">تيك توك | TikTok</a>
             <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook">فيسبوك | Facebook</a>
             <a href="https://www.instagram.com/magedatef13?igsh=NHB3YzN4ZXJxM2Zx" class="link-btn instagram">انستجرام | Instagram</a>
             <a href="https://twitter.com/magedatef23" class="link-btn twitter">تويتر | Twitter</a>
@@ -54,6 +55,11 @@
             <a href="https://t.me/MagedAtef1" class="link-btn telegram">تلجرام | Telegram</a>
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp">واتساب 1 | WhatsApp</a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp">واتساب 2 | WhatsApp</a>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; border-top: 1px solid #333;">
+            <p style="color: #888; font-size: 14px; margin-bottom: 5px;">عدد زوار الملف الشخصي</p>
+            <img src="https://profile-counter.glitch.me/magedatef1/count.svg" alt="عداد الزوار">
         </div>
     </div>
 </body>
