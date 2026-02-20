@@ -9,33 +9,49 @@
         body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; padding-top: 20px; }
         img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
-        h2 { color: white; margin: 10px 0 5px 0; font-size: 26px; }
         
-        /* تأثير الجملة اللامعة (Bio) */
+        /* الاسم بالأزرق السماوي اللامع */
+        .name-sparkle {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5, #00d2ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            margin: 10px 0;
+        }
+
+        /* الجملة الجديدة بالذهبي اللامع */
         .sparkle-text {
             font-size: 18px;
             font-weight: bold;
             margin: 15px auto 25px auto;
-            max-width: 320px;
+            max-width: 350px;
             line-height: 1.6;
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00, 0 0 20px #ffcc00;
-            animation: shine 2s infinite alternate;
-        }
-        @keyframes shine {
-            from { opacity: 0.8; transform: scale(1); text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00; }
-            to { opacity: 1; transform: scale(1.05); text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+            background: linear-gradient(45deg, #fff, #ffcc00, #ffae00, #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
         }
 
+        @keyframes shine { to { background-position: 200% center; } }
+
         .links-container { display: flex; flex-direction: column; gap: 12px; }
+        
+        /* تصميم الأزرار بنفس شكل الصورة */
         .link-btn { 
             color: white; text-decoration: none; padding: 15px; border-radius: 12px; 
             transition: 0.3s; font-weight: bold; display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
         }
-        .link-btn i { margin-left: 10px; font-size: 1.2rem; }
+        .link-btn i { margin-left: 10px; font-size: 1.2rem; order: 2; } /* وضع الأيقونة يسار النص كما في الصورة */
+        .link-btn span { order: 1; }
+        
         .link-btn:hover { transform: scale(1.02); opacity: 0.9; }
         
-        /* الألوان المطلوبة */
+        /* ألوان الأزرار مطابقة للصورة تماماً */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -51,28 +67,29 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/magedatef1.png" alt="ماجد عاطف" class="profile-img">
-        <h2>Maged Atef</h2>
+        <img src="https://github.com/magedatef1.png" alt="Maged Atef" class="profile-img">
+        
+        <h2 class="name-sparkle">Maged Atef</h2>
 
-        <p class="sparkle-text">
-            أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 💥
-        </p>
+        <div class="sparkle-text">
+            أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
+            واصنع من كل لحظة قصة جميلة 🌍🌈
+        </div>
         
         <div class="links-container">
-            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><i class="fab fa-tiktok"></i> تيك توك | TikTok</a>
-            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك | Facebook</a>
-            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><i class="fab fa-instagram"></i> انستجرام | Instagram</a>
-            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><i class="fab fa-twitter"></i> تويتر | Twitter</a>
-            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><i class="fab fa-threads"></i> ثريدز | Threads</a>
-            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><i class="fas fa-arrow-up"></i> UpScrolled</a>
-            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><i class="fab fa-snapchat-ghost"></i> سناب شات | Snapchat</a>
-            <a href="https://vk.com/magedatef" class="link-btn vk"><i class="fab fa-vk"></i> VK (موقع التواصل الروسي)</a>
-            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><i class="fab fa-odnoklassniki"></i> OK.ru</a>
-            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><i class="fab fa-telegram-plane"></i> تلجرام | Telegram</a>
-            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب 1 | WhatsApp</a>
-            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب 2 | WhatsApp</a>
+            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><span>فيسبوك | Facebook</span><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><span>انستجرام | Instagram</span><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
+            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
+            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
+            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>Snapchat | سناب شات</span><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK (موقع التواصل الروسي)</span><i class="fab fa-vk"></i></a>
+            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
+            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </body>
 </html>
-
