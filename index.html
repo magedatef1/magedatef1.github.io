@@ -9,15 +9,16 @@
         body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; padding-top: 20px; }
         
-        /* صورة البروفيل مع الإطار الأزرق */
+        /* صورة البروفيل بالإطار الأزرق */
         img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 10px; }
         
-        /* تأثير اللمعان المتحرك */
+        /* حركة اللمعان العامة */
         @keyframes shine { 
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
 
+        /* اسمك: لون أزرق سماوي متحرك */
         .name-sparkle { 
             font-size: 32px; font-weight: bold; margin: 10px 0;
             background: linear-gradient(90deg, #00d2ff, #fff, #00d2ff);
@@ -25,6 +26,7 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
+        /* الجملة: لون ذهبي متحرك */
         .desc-sparkle { 
             font-size: 18px; font-weight: bold; margin: 15px auto 25px auto; 
             line-height: 1.6; 
@@ -35,20 +37,15 @@
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        /* تعديل الترتيب: الأيقونة أولاً (يمين) ثم النص */
+        /* ترتيب الزر: الأيقونة يميناً (أولاً) ثم النص */
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
-            justify-content: flex-start; /* ترتيب العناصر من البداية */
-            font-size: 17px; transition: 0.3s;
+            justify-content: flex-start; font-size: 17px; transition: 0.3s;
         }
         
-        /* حجم الأيقونة ومكانها (الأولى من اليمين) */
-        .link-btn i { 
-            font-size: 1.8rem; 
-            margin-left: 15px; /* مسافة بين الأيقونة والنص */
-            order: 1; 
-        } 
+        /* حجم الأيقونة الكبير ومكانها في اليمين */
+        .link-btn i { font-size: 1.9rem; margin-left: 15px; order: 1; } 
         .link-btn span { order: 2; }
 
         /* ألوان الأزرار */
@@ -68,7 +65,9 @@
 <body>
     <div class="container">
         <img src="https://github.com/magedatef1.png" class="profile-img">
+        
         <h2 class="name-sparkle">Maged Atef</h2>
+
         <div class="desc-sparkle">
             أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
             واصنع من كل لحظة قصة جميلة 🌍🌈
