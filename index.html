@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ماجد عاطف - روابط التواصل</title>
+    <title>Maged Atef - روابط التواصل</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; padding-top: 20px; }
         img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
         h2 { color: white; margin: 10px 0 5px 0; font-size: 26px; }
-        .desc { color: white; margin-top: 0; margin-bottom: 25px; font-size: 16px; opacity: 0.9; }
+        
+        /* تأثير الجملة اللامعة (Bio) */
+        .sparkle-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px auto 25px auto;
+            max-width: 320px;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+            animation: shine 2s infinite alternate;
+        }
+        @keyframes shine {
+            from { opacity: 0.8; transform: scale(1); text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00; }
+            to { opacity: 1; transform: scale(1.05); text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+        }
+
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         .link-btn { 
-            color: white; 
-            text-decoration: none; 
-            padding: 15px; 
-            border-radius: 12px; 
-            transition: 0.3s; 
-            font-weight: bold;
-            display: flex; /* لتنظيم مكان الأيقونة مع النص */
-            align-items: center;
-            justify-content: center;
+            color: white; text-decoration: none; padding: 15px; border-radius: 12px; 
+            transition: 0.3s; font-weight: bold; display: flex; align-items: center; justify-content: center;
         }
-        .link-btn i { margin-left: 10px; font-size: 1.2rem; } /* تنسيق الأيقونة */
+        .link-btn i { margin-left: 10px; font-size: 1.2rem; }
         .link-btn:hover { transform: scale(1.02); opacity: 0.9; }
         
-        /* الألوان الخاصة بك */
+        /* الألوان المطلوبة */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -44,7 +53,10 @@
     <div class="container">
         <img src="https://github.com/magedatef1.png" alt="ماجد عاطف" class="profile-img">
         <h2>Maged Atef</h2>
-        <p class="desc">صفحاتي الخاصة علي التواصل الاجتماعي</p>
+
+        <p class="sparkle-text">
+            أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 💥
+        </p>
         
         <div class="links-container">
             <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><i class="fab fa-tiktok"></i> تيك توك | TikTok</a>
@@ -63,3 +75,4 @@
     </div>
 </body>
 </html>
+
