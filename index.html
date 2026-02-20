@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ماجد عاطف - روابط التواصل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; padding-top: 20px; }
-        /* تنسيق الصورة الشخصية */
-        img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; object-fit: cover; }
+        img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
         h2 { color: white; margin: 10px 0 5px 0; font-size: 26px; }
         .desc { color: white; margin-top: 0; margin-bottom: 25px; font-size: 16px; opacity: 0.9; }
         .links-container { display: flex; flex-direction: column; gap: 12px; }
@@ -19,11 +19,14 @@
             border-radius: 12px; 
             transition: 0.3s; 
             font-weight: bold;
-            display: block;
+            display: flex; /* لتنظيم مكان الأيقونة مع النص */
+            align-items: center;
+            justify-content: center;
         }
+        .link-btn i { margin-left: 10px; font-size: 1.2rem; } /* تنسيق الأيقونة */
         .link-btn:hover { transform: scale(1.02); opacity: 0.9; }
         
-        /* الألوان الأصلية كما في صورك */
+        /* الألوان الخاصة بك */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -40,24 +43,22 @@
 <body>
     <div class="container">
         <img src="https://github.com/magedatef1.png" alt="ماجد عاطف" class="profile-img">
-        
         <h2>Maged Atef</h2>
         <p class="desc">صفحاتي الخاصة علي التواصل الاجتماعي</p>
         
         <div class="links-container">
-            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok" target="_blank" rel="noopener noreferrer">تيك توك | TikTok</a>
-            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook" target="_blank" rel="noopener noreferrer">فيسبوك | Facebook</a>
-            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram" target="_blank" rel="noopener noreferrer">انستجرام | Instagram</a>
-            <a href="https://twitter.com/magedatef23" class="link-btn twitter" target="_blank" rel="noopener noreferrer">تويتر | Twitter</a>
-            <a href="https://www.threads.com/@magedatef13" class="link-btn threads" target="_blank" rel="noopener noreferrer">ثريدز | Threads</a>
-            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled" target="_blank" rel="noopener noreferrer">UpScrolled</a>
-            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat" target="_blank" rel="noopener noreferrer">سناب شات | Snapchat</a>
-            <a href="https://vk.com/magedatef" class="link-btn vk" target="_blank" rel="noopener noreferrer">VK (موقع التواصل الروسي)</a>
-            <a href="https://ok.ru/profile/910150164494" class="link-btn ok" target="_blank" rel="noopener noreferrer">OK.ru</a>
-            <a href="https://t.me/MagedAtef1" class="link-btn telegram" target="_blank" rel="noopener noreferrer">تلجرام | Telegram</a>
-            
-            <a href="https://api.whatsapp.com/send?phone=201211853202" class="link-btn whatsapp" target="_blank" rel="noopener noreferrer">واتساب 1 | WhatsApp</a>
-            <a href="https://api.whatsapp.com/send?phone=201503461842" class="link-btn whatsapp" target="_blank" rel="noopener noreferrer">واتساب 2 | WhatsApp</a>
+            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><i class="fab fa-tiktok"></i> تيك توك | TikTok</a>
+            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك | Facebook</a>
+            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><i class="fab fa-instagram"></i> انستجرام | Instagram</a>
+            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><i class="fab fa-twitter"></i> تويتر | Twitter</a>
+            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><i class="fab fa-threads"></i> ثريدز | Threads</a>
+            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><i class="fas fa-arrow-up"></i> UpScrolled</a>
+            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><i class="fab fa-snapchat-ghost"></i> سناب شات | Snapchat</a>
+            <a href="https://vk.com/magedatef" class="link-btn vk"><i class="fab fa-vk"></i> VK (موقع التواصل الروسي)</a>
+            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><i class="fab fa-odnoklassniki"></i> OK.ru</a>
+            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><i class="fab fa-telegram-plane"></i> تلجرام | Telegram</a>
+            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب 1 | WhatsApp</a>
+            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب 2 | WhatsApp</a>
         </div>
     </div>
 </body>
