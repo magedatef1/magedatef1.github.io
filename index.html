@@ -6,20 +6,16 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* إعدادات الصفحة الأساسية لضمان الظهور */
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 450px; margin: auto; display: block !important; }
+        .container { max-width: 450px; margin: auto; }
         
-        /* الصورة الشخصية */
         .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; }
 
-        /* محرك حركة اللمعان */
         @keyframes shine { 
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
 
-        /* الاسم المتحرك (أزرق) */
         .name-sparkle { 
             font-size: 32px; font-weight: bold; margin: 10px 0;
             background: linear-gradient(90deg, #00d2ff, #fff, #00d2ff);
@@ -27,7 +23,6 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
-        /* الجملة المتحركة (ذهبي) */
         .desc-sparkle { 
             font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
             background: linear-gradient(90deg, #ffcc00, #fff, #ffcc00);
@@ -35,18 +30,23 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
-        /* تنسيق الأزرار */
         .links-container { display: flex; flex-direction: column; gap: 12px; }
+        
+        /* تنسيق الزر لنقل الأيقونة لليسار */
         .link-btn { 
-            color: white; text-decoration: none; padding: 15px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; font-size: 17px;
+            color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
+            font-weight: bold; display: flex; align-items: center; 
+            justify-content: space-between; /* يوزع العناصر على الأطراف */
+            flex-direction: row-reverse; /* يعكس الترتيب ليضع الأيقونة يساراً */
+            font-size: 17px; transition: 0.3s;
         }
         
-        /* الأيقونة الكبيرة في اليمين */
-        .link-btn i { font-size: 2.2rem; margin-left: 15px; min-width: 40px; }
-        .link-btn span { flex-grow: 1; text-align: center; margin-right: -40px; }
+        /* الأيقونة الكبيرة في اليسار */
+        .link-btn i { font-size: 2.2rem; min-width: 45px; text-align: left; }
+        
+        /* النص في اليمين */
+        .link-btn span { flex-grow: 1; text-align: right; }
 
-        /* ألوان الأزرار كما في صورك */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
