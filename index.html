@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maged Atef - روابط التواصل</title>
+    <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 450px; margin: auto; padding-top: 20px; }
+        /* إعدادات الصفحة الأساسية لضمان الظهور */
+        body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 450px; margin: auto; display: block !important; }
         
-        img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 10px; }
-        
+        /* الصورة الشخصية */
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; }
+
+        /* محرك حركة اللمعان */
         @keyframes shine { 
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
 
+        /* الاسم المتحرك (أزرق) */
         .name-sparkle { 
             font-size: 32px; font-weight: bold; margin: 10px 0;
             background: linear-gradient(90deg, #00d2ff, #fff, #00d2ff);
@@ -23,33 +27,26 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
+        /* الجملة المتحركة (ذهبي) */
         .desc-sparkle { 
-            font-size: 18px; font-weight: bold; margin: 15px auto 25px auto; 
-            line-height: 1.6; 
+            font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
             background: linear-gradient(90deg, #ffcc00, #fff, #ffcc00);
             background-size: 200% auto; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
+        /* تنسيق الأزرار */
         .links-container { display: flex; flex-direction: column; gap: 12px; }
-        
-        /* التنسيق الجديد: يضمن بقاء الأيقونة في اليمين */
         .link-btn { 
-            color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; 
-            flex-direction: row; /* يضمن الترتيب من اليمين لليسار */
-            font-size: 17px; transition: 0.3s;
+            color: white; text-decoration: none; padding: 15px; border-radius: 12px; 
+            font-weight: bold; display: flex; align-items: center; font-size: 17px;
         }
         
-        /* الأيقونة في أقصى اليمين وحجمها كبير */
-        .link-btn i { 
-            font-size: 2rem; 
-            margin-left: 15px; /* مسافة تفصلها عن النص جهة اليسار */
-        }
+        /* الأيقونة الكبيرة في اليمين */
+        .link-btn i { font-size: 2.2rem; margin-left: 15px; min-width: 40px; }
+        .link-btn span { flex-grow: 1; text-align: center; margin-right: -40px; }
 
-        .link-btn span { flex-grow: 1; text-align: center; margin-right: -35px; } /* موازنة النص في الوسط */
-
-        /* ألوان الأزرار */
+        /* ألوان الأزرار كما في صورك */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
