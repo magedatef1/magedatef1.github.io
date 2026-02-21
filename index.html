@@ -8,10 +8,8 @@
     <style>
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; }
-        
         .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; }
 
-        /* تأثير اللمعان المتحرك */
         @keyframes shine { 
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -33,28 +31,24 @@
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        /* تنسيق الأزرار: النص يمين والأيقونة يسار */
+        /* تنسيق ثابت يضع النص يميناً والأيقونة يساراً */
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; /* يوزع النص والأيقونة على الأطراف */
-            font-size: 17px; transition: 0.3s;
+            justify-content: space-between; font-size: 17px;
         }
         
-        /* الأيقونة الكبيرة في اليسار */
-        .link-btn i { font-size: 2.2rem; order: 2; }
-        /* النص في اليمين */
-        .link-btn span { order: 1; flex-grow: 1; text-align: right; }
+        .link-btn i { font-size: 2.2rem; order: 2; } /* الأيقونة في اليسار */
+        .link-btn span { flex-grow: 1; text-align: right; order: 1; } /* النص في اليمين */
 
-        /* ألوان الأزرار */
+        /* الألوان - تم إصلاح كود سناب شات */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
         .twitter { background-color: #1da1f2; }
         .threads { background-color: #000000; border: 1px solid #444; }
         .upscrolled { background-color: #8b5cf6; }
-        /* استعادة لون سناب شات الأصفر */
-        .snapchat { background-color: #fffc00 !important; color: black !important; }
+        .snapchat { background-color: #fffc00 !important; color: black !important; } /* الأصفر الأصلي */
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
         .telegram { background-color: #0088cc; }
