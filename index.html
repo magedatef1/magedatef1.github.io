@@ -12,13 +12,12 @@
         /* صورة البروفيل بالإطار الأزرق */
         img.profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 10px; }
         
-        /* حركة اللمعان المتحركة */
+        /* تأثير اللمعان المتحرك */
         @keyframes shine { 
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
 
-        /* الاسم: أزرق سماوي متحرك */
         .name-sparkle { 
             font-size: 32px; font-weight: bold; margin: 10px 0;
             background: linear-gradient(90deg, #00d2ff, #fff, #00d2ff);
@@ -26,7 +25,6 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
-        /* الجملة: ذهبي متحرك */
         .desc-sparkle { 
             font-size: 18px; font-weight: bold; margin: 15px auto 25px auto; 
             line-height: 1.6; 
@@ -37,21 +35,24 @@
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        /* التنسيق: الأيقونة يميناً والنص بعدها */
+        /* التنسيق: النص أولاً ثم الأيقونة (لتظهر الأيقونة في اليسار) */
         .link-btn { 
             color: white; text-decoration: none; padding: 16px; border-radius: 15px; 
             font-weight: bold; display: flex; align-items: center; 
-            justify-content: flex-start; /* تبدأ من اليمين */
+            justify-content: space-between; /* توزيع النص والأيقونة على الأطراف */
             font-size: 18px; transition: 0.3s;
         }
         
-        /* تكبير الأيقونة ووضعها في اليمين */
+        /* تكبير الأيقونة ووضعها في جهة اليسار */
         .link-btn i { 
-            font-size: 2.2rem; /* حجم كبير جداً */
-            margin-left: 15px; /* مسافة يسار الأيقونة لفصلها عن النص */
-            order: 1; /* يضمن ظهورها أولاً في اليمين (بسبب dir=rtl) */
+            font-size: 2.2rem; /* حجم كبير كما طلبت */
+            order: 2; /* وضع الأيقونة بعد النص في الترتيب (الجهة اليسرى في RTL) */
         }
-        .link-btn span { order: 2; }
+        .link-btn span { 
+            order: 1; 
+            flex-grow: 1; 
+            text-align: center; /* توسيط النص داخل المساحة المتبقية */
+        }
 
         /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
@@ -79,18 +80,18 @@
         </div>
         
         <div class="links-container">
-            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><i class="fab fa-tiktok"></i><span>تيك توك | TikTok</span></a>
-            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><i class="fab fa-facebook-f"></i><span>فيسبوك | Facebook</span></a>
-            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><i class="fab fa-instagram"></i><span>انستجرام | Instagram</span></a>
-            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><i class="fab fa-twitter"></i><span>تويتر | Twitter</span></a>
-            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><i class="fab fa-threads"></i><span>ثريدز | Threads</span></a>
-            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><i class="fas fa-arrow-up"></i><span>UpScrolled</span></a>
-            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><i class="fab fa-snapchat-ghost"></i><span>سناب شات | Snapchat</span></a>
-            <a href="https://vk.com/magedatef" class="link-btn vk"><i class="fab fa-vk"></i><span>VK (موقع التواصل الروسي)</span></a>
-            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><i class="fab fa-odnoklassniki"></i><span>OK.ru</span></a>
-            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><i class="fab fa-telegram-plane"></i><span>تلجرام | Telegram</span></a>
-            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i><span>واتساب 1 | WhatsApp</span></a>
-            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i><span>واتساب 2 | WhatsApp</span></a>
+            <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><span>فيسبوك | Facebook</span><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><span>انستجرام | Instagram</span><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
+            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
+            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
+            <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK (موقع التواصل الروسي)</span><i class="fab fa-vk"></i></a>
+            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
+            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </body>
