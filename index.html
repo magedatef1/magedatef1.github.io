@@ -32,19 +32,19 @@
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        /* تنسيق الزر لنقل الأيقونة لليسار */
+        /* التنسيق الجديد: إجبار الأيقونة على جهة اليسار والنص على اليمين */
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; /* يوزع العناصر على الأطراف */
-            flex-direction: row-reverse; /* يعكس الترتيب ليضع الأيقونة يساراً */
+            font-weight: bold; display: flex; 
+            flex-direction: row-reverse; /* عكس الترتيب بشكل إجباري */
+            align-items: center; justify-content: space-between; 
             font-size: 17px; transition: 0.3s;
         }
         
-        /* الأيقونة الكبيرة في اليسار */
+        /* الأيقونة الكبيرة في اليسار تماماً */
         .link-btn i { font-size: 2.2rem; min-width: 45px; text-align: left; }
         
-        /* النص في اليمين */
+        /* النص في اليمين تماماً */
         .link-btn span { flex-grow: 1; text-align: right; }
 
         .tiktok { background-color: #ff0050; }
