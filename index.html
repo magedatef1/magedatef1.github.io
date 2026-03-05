@@ -9,66 +9,69 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* تأثير النبض الضوئي للإطار السماوي */
-        @keyframes borderGlow {
+        /* لمعان الإطار السماوي حول الصورة */
+        @keyframes borderPulse {
             0% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
-            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 15px rgba(0, 210, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 15px rgba(0, 210, 255, 0.6); }
             100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
         }
 
-        /* تنسيق الصورة مع الإطار السماوي اللامع والتوسيط */
         .profile-img { 
-            width: 110px; 
-            height: 110px; 
-            border-radius: 50%; 
-            border: 3px solid #00d2ff; /* اللون السماوي الأساسي */
-            margin-bottom: 15px;
-            display: block;
-            object-fit: cover;
-            animation: borderGlow 3s ease-in-out infinite; /* إضافة تأثير اللمعان للإطار */
+            width: 110px; height: 110px; border-radius: 50%; 
+            border: 3px solid #00d2ff; margin-bottom: 15px;
+            display: block; object-fit: cover;
+            animation: borderPulse 3s ease-in-out infinite;
         }
 
-        /* تأثير اللمعان الاحترافي الثابت للاسم */
-        @keyframes professionalGlow {
-            0% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); filter: brightness(1); }
-            50% { text-shadow: 0 0 20px rgba(0, 210, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.5); filter: brightness(1.2); }
-            100% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); filter: brightness(1); }
+        /* لمعان الاسم الاحترافي الثابت */
+        @keyframes nameGlow {
+            0% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); }
+            50% { text-shadow: 0 0 20px rgba(0, 210, 255, 0.9); }
+            100% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); }
         }
 
-        /* تأثير اللمعان الاحترافي الثابت للوصف */
-        @keyframes goldGlow {
-            0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); filter: brightness(1); }
-            50% { text-shadow: 0 0 15px rgba(255, 204, 0, GoldGlow 3s ease-in-out infinite;
+        .name-sparkle { 
+            font-size: 32px; font-weight: bold; margin: 10px 0;
+            color: #00d2ff; animation: nameGlow 3s ease-in-out infinite;
         }
 
+        /* لمعان الوصف الاحترافي الثابت */
+        @keyframes descGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(255, 204, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); }
+        }
+
+        .desc-fixed { 
+            font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
+            color: #ffcc00; animation: descGlow 3s ease-in-out infinite;
+        }
+
+        /* حركة الأيقونات */
         @keyframes iconPulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.15); }
             100% { transform: scale(1); }
         }
 
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
-        
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
             justify-content: space-between; font-size: 17px;
         }
-        
         .link-btn i { font-size: 2.2rem; order: 2; animation: iconPulse 2s infinite ease-in-out; } 
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
+        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
         .twitter { background-color: #1da1f2; }
         .threads { background-color: #000000; border: 1px solid #444; }
         .upscrolled { background-color: #8b5cf6; }
-        
-        /* سناب شات باللون الأصفر الأصلي والخط الأسود */
         .snapchat { background-color: #fffc00 !important; color: black !important; }
         .snapchat i { color: black !important; }
-
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
         .telegram { background-color: #0088cc; }
@@ -78,14 +81,11 @@
 <body>
     <div class="container">
         <img src="https://github.com/magedatef1.png" class="profile-img">
-        
         <h2 class="name-sparkle">Maged Atef</h2>
-        
         <div class="desc-fixed">
             أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
             واصنع من كل لحظة قصة جميلة 
         </div>
-        
         <div class="links-container">
             <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><span>فيسبوك | Facebook</span><i class="fab fa-facebook-f"></i></a>
