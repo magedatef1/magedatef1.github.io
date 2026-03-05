@@ -7,16 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; } /* تم إضافة التوسيط هنا */
-        
-        /* تنسيق الصورة لتكون في المنتصف تماماً */
+        .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
+
+        /* تأثير النبض الضوئي للإطار السماوي */
+        @keyframes borderGlow {
+            0% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
+            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 15px rgba(0, 210, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3); }
+            100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
+        }
+
+        /* تنسيق الصورة مع الإطار السماوي اللامع والتوسيط */
         .profile-img { 
             width: 110px; 
             height: 110px; 
             border-radius: 50%; 
-            border: 3px solid #00d2ff; 
-            margin: 0 auto 15px auto; /* تم ضبط المارجن للتوسيط */
+            border: 3px solid #00d2ff; /* اللون السماوي الأساسي */
+            margin-bottom: 15px;
             display: block;
+            object-fit: cover;
+            animation: borderGlow 3s ease-in-out infinite; /* إضافة تأثير اللمعان للإطار */
         }
 
         /* تأثير اللمعان الاحترافي الثابت للاسم */
@@ -29,20 +38,7 @@
         /* تأثير اللمعان الاحترافي الثابت للوصف */
         @keyframes goldGlow {
             0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); filter: brightness(1); }
-            50% { text-shadow: 0 0 15px rgba(255, 204, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.4); filter: brightness(1.2); }
-            100% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); filter: brightness(1); }
-        }
-
-        .name-sparkle { 
-            font-size: 32px; font-weight: bold; margin: 10px 0;
-            color: #00d2ff; 
-            animation: professionalGlow 3s ease-in-out infinite;
-        }
-
-        .desc-fixed { 
-            font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
-            color: #ffcc00; 
-            animation: goldGlow 3s ease-in-out infinite;
+            50% { text-shadow: 0 0 15px rgba(255, 204, 0, GoldGlow 3s ease-in-out infinite;
         }
 
         @keyframes iconPulse {
