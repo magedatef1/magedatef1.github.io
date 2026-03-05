@@ -23,10 +23,17 @@
             -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
         }
 
-        /* تعديل الوصف ليكون بلون ثابت (أصفر ذهبي) بدون حركة */
+        /* نص ثابت تماماً باللون الأصفر الذهبي */
         .desc-fixed { 
             font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
-            color: #ffcc00; /* لون أصفر ثابت */
+            color: #ffcc00; 
+        }
+
+        /* حركة النبض للأيقونات فقط دون تغيير مكانها */
+        @keyframes iconPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
@@ -37,9 +44,16 @@
             justify-content: space-between; font-size: 17px;
         }
         
-        .link-btn i { font-size: 2.2rem; order: 2; } 
+        /* تطبيق الحركة على الأيقونة فقط */
+        .link-btn i { 
+            font-size: 2.2rem; 
+            order: 2; 
+            animation: iconPulse 2s infinite ease-in-out; 
+        } 
+
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
+        /* الألوان الرسمية */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -75,8 +89,6 @@
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
-            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
-            <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><span>واتساب 3 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </body>
