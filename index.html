@@ -10,24 +10,32 @@
         .container { max-width: 450px; margin: auto; }
         .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; }
 
-        /* تأثير اللمعان الاحترافي (بدون حركة انتقالية) */
+        /* تأثير اللمعان الاحترافي الثابت (للأزرق) */
         @keyframes professionalGlow {
             0% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); filter: brightness(1); }
-            50% { text-shadow: 0 0 15px rgba(0, 210, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.6); filter: brightness(1.3); }
+            50% { text-shadow: 0 0 20px rgba(0, 210, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.5); filter: brightness(1.2); }
             100% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.4); filter: brightness(1); }
         }
 
+        /* تأثير اللمعان الاحترافي الثابت (للأصفر) */
+        @keyframes goldGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); filter: brightness(1); }
+            50% { text-shadow: 0 0 15px rgba(255, 204, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.4); filter: brightness(1.2); }
+            100% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.3); filter: brightness(1); }
+        }
+
         .name-sparkle { 
-            font-size: 34px; font-weight: bold; margin: 10px 0;
-            color: #00d2ff; /* لون ثابت سماوي جذاب */
-            animation: professionalGlow 3s ease-in-out infinite; /* تأثير لمعان نبضي هادئ */
+            font-size: 32px; font-weight: bold; margin: 10px 0;
+            color: #00d2ff; 
+            animation: professionalGlow 3s ease-in-out infinite;
             display: inline-block;
         }
 
-        /* نص ثابت باللون الأصفر الذهبي */
         .desc-fixed { 
             font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
             color: #ffcc00; 
+            animation: goldGlow 3s ease-in-out infinite; /* إضافة اللمعان للوصف */
+            display: block;
         }
 
         @keyframes iconPulse {
@@ -37,13 +45,11 @@
         }
 
         .links-container { display: flex; flex-direction: column; gap: 12px; }
-        
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
             justify-content: space-between; font-size: 17px;
         }
-        
         .link-btn i { font-size: 2.2rem; order: 2; animation: iconPulse 2s infinite ease-in-out; } 
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
@@ -53,11 +59,7 @@
         .twitter { background-color: #1da1f2; }
         .threads { background-color: #000000; border: 1px solid #444; }
         .upscrolled { background-color: #8b5cf6; }
-
-        /* سناب شات باللون الأصفر الأصلي */
         .snapchat { background-color: #fffc00 !important; color: black !important; }
-        .snapchat i { color: black !important; }
-
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
         .telegram { background-color: #0088cc; }
