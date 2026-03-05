@@ -15,20 +15,22 @@
             100% { background-position: 200% center; }
         }
 
+        /* تم تبطيء حركة الاسم هنا إلى 12 ثانية لتكون هادئة جداً */
         .name-sparkle { 
             font-size: 32px; font-weight: bold; margin: 10px 0;
             background: linear-gradient(90deg, #00d2ff, #fff, #00d2ff);
             background-size: 200% auto; -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
+            -webkit-text-fill-color: transparent; 
+            animation: shine 12s linear infinite; 
         }
 
-        /* نص ثابت باللون الأصفر */
+        /* نص ثابت باللون الأصفر الذهبي */
         .desc-fixed { 
             font-size: 18px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
             color: #ffcc00; 
         }
 
-        /* حركة النبض للأيقونات */
+        /* حركة النبض للأيقونات فقط */
         @keyframes iconPulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
@@ -51,7 +53,7 @@
 
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
-        /* الألوان */
+        /* الألوان الرسمية كما في صورتك */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -86,6 +88,7 @@
             <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
+            
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><span>واتساب 3 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
