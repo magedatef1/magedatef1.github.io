@@ -9,50 +9,46 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* توهج الإطار السماوي حول الصورة - ثابت في مكانه */
-        @keyframes borderGlowFixed {
-            0% { box-shadow: 0 0 5px rgba(0, 210, 255, 0.3); border-color: rgba(0, 210, 255, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(0, 210, 255, 0.8); border-color: rgba(0, 210, 255, 1); }
-            100% { box-shadow: 0 0 5px rgba(0, 210, 255, 0.3); border-color: rgba(0, 210, 255, 0.5); }
+        /* لمعان الإطار السماوي حول الصورة */
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
+            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.8); }
         }
 
         .profile-img { 
-            width: 115px; height: 115px; border-radius: 50%; 
-            border: 3px solid #00d2ff; margin-bottom: 20px;
+            width: 110px; height: 110px; border-radius: 50%; 
+            border: 3px solid #00d2ff; margin-bottom: 15px;
             display: block; object-fit: cover;
-            animation: borderGlowFixed 3s ease-in-out infinite;
+            animation: borderPulse 3s ease-in-out infinite;
         }
 
-        /* توهج الاسم الاحترافي - ثابت بدون حركة */
-        @keyframes textGlowBlue {
-            0% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.3); }
-            50% { text-shadow: 0 0 20px rgba(0, 210, 255, 1), 0 0 10px rgba(255, 255, 255, 0.5); }
-            100% { text-shadow: 0 0 5px rgba(0, 210, 255, 0.3); }
+        /* لمعان الاسم الاحترافي - مكثف وثابت */
+        @keyframes intenseNameGlow {
+            0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); color: #00d2ff; }
+            50% { text-shadow: 0 0 25px rgba(0, 210, 255, 1), 0 0 40px rgba(0, 210, 255, 0.6); color: #ffffff; }
         }
 
         .name-sparkle { 
             font-size: 34px; font-weight: bold; margin: 10px 0;
             color: #00d2ff; 
-            animation: textGlowBlue 3s ease-in-out infinite;
-            display: inline-block; /* لضمان الثبات */
+            animation: intenseNameGlow 2.5s ease-in-out infinite;
+            display: inline-block;
         }
 
-        /* توهج العبارة الذهبي - ثابت بدون حركة */
-        @keyframes textGlowGold {
-            0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
-            50% { text-shadow: 0 0 15px rgba(255, 204, 0, 0.9), 0 0 8px rgba(255, 255, 255, 0.4); }
-            100% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
+        /* لمعان العبارة الوصفية - مكثف وثابت */
+        @keyframes intenseDescGlow {
+            0%, 100% { text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); color: #ffcc00; }
+            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 35px rgba(255, 255, 255, 0.5); color: #fffbe6; }
         }
 
         .desc-fixed { 
-            font-size: 18px; font-weight: bold; margin-bottom: 30px; line-height: 1.6;
+            font-size: 19px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
             color: #ffcc00; 
-            animation: textGlowGold 3s ease-in-out infinite;
-            display: block; /* لضمان الثبات */
+            animation: intenseDescGlow 3s ease-in-out infinite;
+            display: inline-block;
             max-width: 90%;
         }
 
-        /* تنسيق الروابط والأزرار */
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
@@ -65,8 +61,14 @@
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
+        .twitter { background-color: #1da1f2; }
+        .threads { background-color: #000000; border: 1px solid #444; }
+        .upscrolled { background-color: #8b5cf6; }
         .snapchat { background-color: #fffc00 !important; color: black !important; }
         .snapchat i { color: black !important; }
+        .vk { background-color: #4c75a3; }
+        .ok { background-color: #ed812b; }
+        .telegram { background-color: #0088cc; }
         .whatsapp { background-color: #25d366; }
     </style>
 </head>
@@ -85,8 +87,16 @@
             <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><span>فيسبوك | Facebook</span><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><span>انستجرام | Instagram</span><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
+            <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
+            <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
-            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
+            <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
+            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
+            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><span>واتساب 3 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </body>
