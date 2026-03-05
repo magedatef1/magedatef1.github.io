@@ -9,55 +9,60 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* لمعان الإطار السماوي حول الصورة */
+        /* 1. لمعان الإطار السماوي حول الصورة */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.8); }
         }
-
         .profile-img { 
-            width: 110px; height: 110px; border-radius: 50%; 
-            border: 3px solid #00d2ff; margin-bottom: 15px;
-            display: block; object-fit: cover;
+            width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; 
+            margin-bottom: 15px; display: block; object-fit: cover;
             animation: borderPulse 3s ease-in-out infinite;
         }
 
-        /* لمعان الاسم الاحترافي - مكثف وثابت */
+        /* 2. لمعان الاسم الاحترافي (ثابت في مكانه) */
         @keyframes intenseNameGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); color: #00d2ff; }
             50% { text-shadow: 0 0 25px rgba(0, 210, 255, 1), 0 0 40px rgba(0, 210, 255, 0.6); color: #ffffff; }
         }
-
         .name-sparkle { 
             font-size: 34px; font-weight: bold; margin: 10px 0;
-            color: #00d2ff; 
             animation: intenseNameGlow 2.5s ease-in-out infinite;
-            display: inline-block;
         }
 
-        /* لمعان العبارة الوصفية - مكثف وثابت */
+        /* 3. لمعان العبارة الوصفية (ثابتة في مكانها) */
         @keyframes intenseDescGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); color: #ffcc00; }
             50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 35px rgba(255, 255, 255, 0.5); color: #fffbe6; }
         }
-
         .desc-fixed { 
             font-size: 19px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
-            color: #ffcc00; 
             animation: intenseDescGlow 3s ease-in-out infinite;
-            display: inline-block;
             max-width: 90%;
+        }
+
+        /* 4. حركة أيقونات التطبيقات (نبض احترافي) */
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); filter: drop-shadow(0 0 8px white); }
         }
 
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; font-size: 17px;
+            justify-content: space-between; font-size: 17px; transition: 0.3s;
         }
-        .link-btn i { font-size: 2.2rem; order: 2; } 
+        
+        /* تفعيل الحركة على الأيقونة فقط */
+        .link-btn i { 
+            font-size: 2.2rem; 
+            order: 2; 
+            animation: iconBounce 2s infinite ease-in-out; 
+        } 
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
+        /* ألوان التطبيقات */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -75,9 +80,7 @@
 <body>
     <div class="container">
         <img src="https://github.com/magedatef1.png" class="profile-img">
-        
         <h2 class="name-sparkle">Maged Atef</h2>
-        
         <div class="desc-fixed">
             أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
             واصنع من كل لحظة قصة جميلة 
