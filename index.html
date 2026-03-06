@@ -9,43 +9,26 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* لمعان الإطار السماوي المضيء حول الصورة */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.8); }
         }
-        .profile-img { 
-            width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; 
-            margin-bottom: 15px; display: block; object-fit: cover;
-            animation: borderPulse 3s ease-in-out infinite;
-        }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; animation: borderPulse 3s infinite; }
 
-        /* لمعان الاسم والوصف المضيء */
         @keyframes intenseGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); }
-            50% { text-shadow: 0 0 25px rgba(0, 210, 255, 1), 0 0 40px rgba(255, 255, 255, 0.4); }
+            50% { text-shadow: 0 0 25px rgba(0, 210, 255, 1); }
         }
         .name-sparkle { font-size: 34px; font-weight: bold; margin: 10px 0; color: #00d2ff; animation: intenseGlow 2.5s infinite; }
         .desc-glow { font-size: 19px; font-weight: bold; margin-bottom: 25px; color: #ffcc00; animation: intenseGlow 3s infinite; }
 
-        /* حركة الأيقونات النابضة */
-        @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); filter: drop-shadow(0 0 8px white); }
-        }
+        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
-        .link-btn { 
-            color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; font-size: 17px; cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .link-btn:active { transform: scale(0.95); }
-        .link-btn i { font-size: 2.2rem; order: 2; animation: iconBounce 2s infinite ease-in-out; } 
-        .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
+        .link-btn { color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; font-size: 17px; cursor: pointer; }
+        .link-btn i { font-size: 2.2rem; order: 2; animation: iconBounce 2s infinite ease-in-out; }
+        .link-btn span { flex-grow: 1; text-align: right; order: 1; }
 
-        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -53,39 +36,33 @@
         .snapchat { background-color: #fffc00 !important; color: black !important; }
         .snapchat i { color: black !important; }
         .wechat { background-color: #07C160; }
+        .vk { background-color: #4c75a3; }
+        .ok { background-color: #ed812b; }
+        .telegram { background-color: #0088cc; }
         .whatsapp { background-color: #25d366; }
 
-        /* نافذة الـ QR Code المنبثقة */
-        #qr-modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;
-        }
-        .modal-content {
-            background: white; padding: 20px; border-radius: 20px; color: black;
-            text-align: center; width: 85%; max-width: 320px;
-        }
+        #qr-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 85%; max-width: 320px; }
         .modal-content img { width: 100%; border-radius: 10px; border: 4px solid #07C160; }
-        .modal-content button { 
-            margin-top: 15px; padding: 12px 30px; border-radius: 10px; border: none; 
-            background: #07C160; color: white; font-weight: bold; cursor: pointer; 
-        }
+        .modal-content button { margin-top: 15px; padding: 10px 25px; border-radius: 10px; background: #07C160; color: white; border: none; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <img src="https://github.com/magedatef1.png" class="profile-img">
         <h1 class="name-sparkle">Maged Atef</h1>
-        <div class="desc-glow">أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br> واصنع من كل لحظة قصة جميلة</div>
+        <div class="desc-glow">أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨</div>
         
         <div class="links-container">
             <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="link-btn facebook"><span>فيسبوك | Facebook</span><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><span>انستجرام | Instagram</span><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
-            
             <div onclick="showQR()" class="link-btn wechat"><span>ويشات | WeChat</span><i class="fab fa-weixin"></i></div>
-            
+            <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
+            <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
+            <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><span>واتساب 3 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
@@ -94,10 +71,10 @@
 
     <div id="qr-modal" onclick="hideQR()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <p style="font-weight: bold; font-size: 18px;">امسح الكود لإضافتي على WeChat</p>
+            <p style="font-weight: bold;">امسح الكود لإضافتي على WeChat</p>
             <img src="wechat_qr.jpg" alt="WeChat QR"> 
             <p style="font-size: 14px; margin-top: 10px; color: #666;">ID: magedatef12051996</p>
-            <button onclick="hideQR()">إغلاق النافذة</button>
+            <button onclick="hideQR()">إغلاق</button>
         </div>
     </div>
 
@@ -105,6 +82,5 @@
         function showQR() { document.getElementById('qr-modal').style.display = 'flex'; }
         function hideQR() { document.getElementById('qr-modal').style.display = 'none'; }
     </script>
-
 </body>
 </html>
