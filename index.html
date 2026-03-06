@@ -9,7 +9,7 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* 1. لمعان الإطار السماوي حول الصورة */
+        /* لمعان الإطار السماوي المضيء حول الصورة */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.8); }
@@ -20,7 +20,7 @@
             animation: borderPulse 3s ease-in-out infinite;
         }
 
-        /* 2. لمعان الاسم الاحترافي (ثابت في مكانه) */
+        /* لمعان الاسم الاحترافي - ثابت في مكانه */
         @keyframes intenseNameGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); color: #00d2ff; }
             50% { text-shadow: 0 0 25px rgba(0, 210, 255, 1), 0 0 40px rgba(0, 210, 255, 0.6); color: #ffffff; }
@@ -30,7 +30,7 @@
             animation: intenseNameGlow 2.5s ease-in-out infinite;
         }
 
-        /* 3. لمعان العبارة الوصفية (ثابتة في مكانها) */
+        /* لمعان العبارة الوصفية - ثابتة في مكانها */
         @keyframes intenseDescGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); color: #ffcc00; }
             50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 35px rgba(255, 255, 255, 0.5); color: #fffbe6; }
@@ -41,7 +41,7 @@
             max-width: 90%;
         }
 
-        /* 4. حركة أيقونات التطبيقات (نبض احترافي) */
+        /* حركة أيقونات التطبيقات */
         @keyframes iconBounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.25); filter: drop-shadow(0 0 8px white); }
@@ -51,18 +51,12 @@
         .link-btn { 
             color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
             font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; font-size: 17px; transition: 0.3s;
+            justify-content: space-between; font-size: 17px;
         }
-        
-        /* تفعيل الحركة على الأيقونة فقط */
-        .link-btn i { 
-            font-size: 2.2rem; 
-            order: 2; 
-            animation: iconBounce 2s infinite ease-in-out; 
-        } 
+        .link-btn i { font-size: 2.2rem; order: 2; animation: iconBounce 2s infinite ease-in-out; } 
         .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
 
-        /* ألوان التطبيقات */
+        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background-color: #e1306c; }
@@ -71,6 +65,7 @@
         .upscrolled { background-color: #8b5cf6; }
         .snapchat { background-color: #fffc00 !important; color: black !important; }
         .snapchat i { color: black !important; }
+        .wechat { background-color: #07C160; }
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
         .telegram { background-color: #0088cc; }
@@ -94,6 +89,7 @@
             <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
             <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="weixin://dl/chat?magedatef12051996" class="link-btn wechat"><span>ويشات | WeChat</span><i class="fab fa-weixin"></i></a>
             <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
