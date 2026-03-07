@@ -3,78 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maged Atef</title>
+    <title>Maged Atef | روابطي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
+        body { background-color: #121212; color: white; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
+        /* تأثير اللمعان حول الصورة الشخصية */
         @keyframes borderPulse {
-            0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
-            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.8); }
+            0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
+            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 30px rgba(0, 210, 255, 0.8); }
         }
         .profile-img { 
-            width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; 
-            margin-bottom: 15px; display: block; object-fit: cover;
-            animation: borderPulse 3s ease-in-out infinite;
+            width: 120px; height: 120px; border-radius: 50%; border: 4px solid #00d2ff; 
+            margin-bottom: 15px; object-fit: cover; animation: borderPulse 3s infinite;
         }
 
-        /* لمعان الاسم القوي والمتحرك */
-        @keyframes intenseNameGlow {
-            0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); color: #00d2ff; }
-            50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #ffffff; }
-        }
-        .name-sparkle { font-size: 34px; font-weight: bold; margin: 10px 0; animation: intenseNameGlow 2.5s infinite; }
-
-        /* لمعان العبارة الوصفية الذهبي القوي والمتحرك */
-        @keyframes intenseDescGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; }
-            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 40px rgba(255, 204, 0, 0.7); color: #fffbe6; }
-        }
-        .desc-fixed { 
-            font-size: 19px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
-            animation: intenseDescGlow 3s ease-in-out infinite;
+        /* حاوية الاسم مع أيقونة التوثيق */
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* المسافة بين الاسم والأيقونة */
+            margin: 10px 0;
         }
 
-        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+        /* لمعان الاسم القوي */
+        @keyframes nameGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; }
+            50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #fff; }
+        }
+        .name-sparkle { font-size: 36px; font-weight: bold; animation: nameGlow 2.5s infinite; margin: 0; }
 
+        /* تصميم أيقونة التوثيق الزرقاء */
+        .verified-icon {
+            color: #1877f2; /* لون أزرق الفيسبوك */
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* لمعان الوصف الذهبي */
+        @keyframes descGlow {
+            0%, 100% { text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); color: #ffcc00; }
+            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1); color: #fffbe6; }
+        }
+        .desc-fixed { font-size: 18px; font-weight: bold; margin-bottom: 30px; animation: descGlow 3s infinite; line-height: 1.5; max-width: 90%; }
+
+        /* تصميم الأزرار وحركة الأيقونات */
+        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
         .link-btn { 
-            color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; font-size: 17px; transition: 0.3s;
-            cursor: pointer;
+            color: white; text-decoration: none; padding: 16px 20px; border-radius: 15px; 
+            font-weight: bold; display: flex; align-items: center; justify-content: space-between; 
+            font-size: 18px; transition: 0.3s; cursor: pointer; border: none;
         }
-        
-        .link-btn i { font-size: 2rem; order: 2; animation: iconBounce 2s infinite ease-in-out; } 
-        .link-btn span { flex-grow: 1; text-align: right; order: 1; } 
+        .link-btn i { font-size: 2.2rem; animation: iconBounce 2s infinite ease-in-out; }
 
-        .tiktok { background-color: #ff0050; }
-        .facebook { background-color: #1877f2; }
-        .instagram { background-color: #e1306c; }
-        .twitter { background-color: #1da1f2; }
-        .threads { background-color: #000000; border: 1px solid #444; }
-        .wechat { background-color: #07C160; }
-        .upscrolled { background-color: #8b5cf6; }
-        .snapchat { background-color: #fffc00; color: black; }
-        .vk { background-color: #4c75a3; }
-        .ok { background-color: #ed812b; }
-        .telegram { background-color: #0088cc; }
-        .whatsapp { background-color: #25d366; }
-        .viber { background-color: #7360f2; }
+        /* ألوان التطبيقات */
+        .tiktok { background: #000000; border: 1px solid #ff0050; }
+        .facebook { background: #1877f2; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .twitter { background: #1da1f2; }
+        .threads { background: #000; border: 1px solid #fff; }
+        .wechat { background: #07C160; }
+        .upscrolled { background: #8b5cf6; }
+        .snapchat { background: #fffc00; color: #000; }
+        .snapchat i { color: #000; }
+        .vk { background: #4c75a3; }
+        .ok { background: #ed812b; }
+        .telegram { background: #0088cc; }
+        .whatsapp { background: #25d366; }
+        .viber { background: #7360f2; }
 
+        /* النوافذ المنبثقة للـ QR */
         .modal-style {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;
+            background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center;
         }
         .modal-content {
-            background: white; padding: 20px; border-radius: 20px; color: black;
-            text-align: center; width: 85%; max-width: 320px;
+            background: white; padding: 25px; border-radius: 25px; color: black;
+            text-align: center; width: 85%; max-width: 340px;
         }
-        .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; border: 2px solid #ddd; }
+        .modal-content img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 3px solid #eee; display: block; }
+        .modal-content p { font-size: 20px; font-weight: bold; margin: 10px 0; color: #333; }
+        .modal-content .phone-num { font-size: 22px; color: #7360f2; margin-bottom: 15px; }
         .modal-content button { 
-            margin-top: 15px; padding: 12px; border-radius: 10px; border: none; 
-            background: #333; color: white; font-weight: bold; cursor: pointer; width: 100%;
+            padding: 12px; border-radius: 12px; border: none; background: #333; 
+            color: white; width: 100%; font-weight: bold; cursor: pointer;
         }
     </style>
 </head>
@@ -82,11 +99,15 @@
 
     <div class="container">
         <img src="https://github.com/magedatef1.png" class="profile-img">
-        <h2 class="name-sparkle">Maged Atef</h2>
-        <div class="desc-fixed">
-            أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
-            واصنع من كل لحظة قصة جميلة
+        
+        <div class="name-container">
+            <h1 class="name-sparkle">Maged Atef</h1>
+            <span class="verified-icon" title="حساب موثق">
+                <i class="fas fa-check-circle"></i>
+            </span>
         </div>
+        
+        <div class="desc-fixed">أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br> واصنع من كل لحظة قصة جميلة</div>
         
         <div class="links-container">
             <a href="https://www.tiktok.com/@magedatef12" class="link-btn tiktok"><span>تيك توك | TikTok</span><i class="fab fa-tiktok"></i></a>
@@ -115,8 +136,8 @@
 
     <div id="wechat-modal" class="modal-style" onclick="hidePop('wechat-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <p>امسح الكود لإضافتي على WeChat</p>
-            <img src="./wechat_qr.jpg"> 
+            <p>امسح الكود للإضافة على WeChat</p>
+            <img src="./wechat_qr.jpg" alt="WeChat QR">
             <button onclick="hidePop('wechat-modal')">إغلاق</button>
         </div>
     </div>
@@ -124,8 +145,8 @@
     <div id="viber1-modal" class="modal-style" onclick="hidePop('viber1-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <p>فايبر (1)</p>
-            <img src="./viber_qr1.jpg"> 
-            <p style="font-weight: bold; color: #7360f2;">201503461842+</p>
+            <img src="./viber_qr1.jpg" alt="Viber QR 1">
+            <div class="phone-num">+201503461842</div>
             <button onclick="hidePop('viber1-modal')">إغلاق</button>
         </div>
     </div>
@@ -133,8 +154,8 @@
     <div id="viber2-modal" class="modal-style" onclick="hidePop('viber2-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <p>فايبر (2)</p>
-            <img src="./viber_qr2.jpg"> 
-            <p style="font-weight: bold; color: #7360f2;">201211853202+</p>
+            <img src="./viber_qr2.jpg" alt="Viber QR 2">
+            <div class="phone-num">+201211853202</div>
             <button onclick="hidePop('viber2-modal')">إغلاق</button>
         </div>
     </div>
@@ -142,8 +163,8 @@
     <div id="viber3-modal" class="modal-style" onclick="hidePop('viber3-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <p>فايبر (3)</p>
-            <img src="./viber_qr3.jpg"> 
-            <p style="font-weight: bold; color: #7360f2;">20152719470+</p>
+            <img src="./viber_qr3.jpg" alt="Viber QR 3">
+            <div class="phone-num">+20152719470</div>
             <button onclick="hidePop('viber3-modal')">إغلاق</button>
         </div>
     </div>
