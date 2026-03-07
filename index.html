@@ -9,7 +9,7 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* نبض هالة الصورة الشخصية */
+        /* تأثير نبض الصورة الشخصية */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
@@ -19,15 +19,15 @@
             margin-bottom: 15px; animation: borderPulse 3s infinite;
         }
 
-        /* حاوية الاسم لضمان التوثيق بالجهة الأخرى */
-        .name-wrapper { display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0; flex-direction: row-reverse; }
+        /* حاوية الاسم لضمان التوثيق بعد كلمة Atef */
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 10px 0; flex-direction: row; }
 
         /* لمعان الاسم والتوثيق */
         @keyframes intenseGlow {
             0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; }
             50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1), 0 0 45px rgba(255, 255, 255, 0.4); color: #ffffff; }
         }
-        .name-sparkle { font-size: 34px; font-weight: bold; animation: intenseGlow 2.5s infinite; margin: 0; display: flex; align-items: center; gap: 10px; }
+        .name-sparkle { font-size: 34px; font-weight: bold; animation: intenseGlow 2.5s infinite; margin: 0; }
         .verified-badge { color: #1877f2; font-size: 26px; animation: intenseGlow 2.5s infinite; }
 
         /* لمعان الوصف الذهبي */
@@ -52,7 +52,7 @@
         
         .link-btn i { font-size: 2.1rem; animation: iconBounce 2s infinite ease-in-out; } 
 
-        /* ألوان الأزرار */
+        /* ألوان الأزرار كما في الصور المرفقة */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -80,10 +80,8 @@
         <img src="https://github.com/magedatef1.png" class="profile-img">
         
         <div class="name-wrapper">
-            <h2 class="name-sparkle">
-                Maged Atef 
-                <i class="fas fa-check-circle verified-badge"></i>
-            </h2>
+            <h2 class="name-sparkle">Maged Atef</h2>
+            <i class="fas fa-check-circle verified-badge"></i>
         </div>
 
         <div class="desc-fixed">
