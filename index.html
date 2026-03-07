@@ -9,7 +9,7 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* تأثير نبض الصورة الشخصية */
+        /* نبض هالة الصورة الشخصية */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
@@ -19,8 +19,15 @@
             margin-bottom: 15px; animation: borderPulse 3s infinite;
         }
 
-        /* حاوية الاسم لضمان التوثيق بعد كلمة Atef */
-        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 10px 0; flex-direction: row; }
+        /* حاوية الاسم لضمان التوثيق بعد Atef مباشرة */
+        .name-wrapper { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            margin: 10px 0;
+            flex-direction: row; /* يضمن الترتيب من اليمين لليسار: Maged ثم Atef ثم العلامة */
+        }
 
         /* لمعان الاسم والتوثيق */
         @keyframes intenseGlow {
@@ -52,7 +59,7 @@
         
         .link-btn i { font-size: 2.1rem; animation: iconBounce 2s infinite ease-in-out; } 
 
-        /* ألوان الأزرار كما في الصور المرفقة */
+        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
