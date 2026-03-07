@@ -19,14 +19,22 @@
             animation: borderPulse 3s ease-in-out infinite;
         }
 
+        /* لمعان الاسم القوي والمتحرك */
         @keyframes intenseNameGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.6); color: #00d2ff; }
             50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #ffffff; }
         }
         .name-sparkle { font-size: 34px; font-weight: bold; margin: 10px 0; animation: intenseNameGlow 2.5s infinite; }
 
-        /* الوصف بالكامل */
-        .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; color: #ffcc00; line-height: 1.6; }
+        /* لمعان العبارة الوصفية الذهبي القوي والمتحرك */
+        @keyframes intenseDescGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; }
+            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 40px rgba(255, 204, 0, 0.7); color: #fffbe6; }
+        }
+        .desc-fixed { 
+            font-size: 19px; font-weight: bold; margin-bottom: 25px; line-height: 1.6;
+            animation: intenseDescGlow 3s ease-in-out infinite;
+        }
 
         @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
