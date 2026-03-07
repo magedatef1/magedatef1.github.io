@@ -19,7 +19,7 @@
             margin-bottom: 15px; object-fit: cover; animation: borderPulse 3s infinite;
         }
 
-        /* حاوية الاسم مع أيقونة التوثيق */
+        /* حاوية الاسم مع التوثيق */
         .name-container {
             display: flex;
             align-items: center;
@@ -28,40 +28,52 @@
             margin: 10px 0;
         }
 
-        /* لمعان الاسم القوي */
+        /* لمعان الاسم القوي والمستمر */
         @keyframes nameGlow {
             0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; }
             50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #fff; }
         }
         .name-sparkle { font-size: 36px; font-weight: bold; animation: nameGlow 2.5s infinite; margin: 0; }
 
-        /* تصميم أيقونة التوثيق الزرقاء */
+        /* تصميم ولمعان أيقونة التوثيق الزرقاء */
+        @keyframes verifiedGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(24, 119, 242, 0.7); }
+            50% { text-shadow: 0 0 25px rgba(24, 119, 242, 1), 0 0 40px rgba(24, 119, 242, 0.6); }
+        }
         .verified-icon {
             color: #1877f2; /* لون أزرق الفيسبوك */
             font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: verifiedGlow 2.5s infinite;
         }
 
         /* لمعان الوصف الذهبي */
         @keyframes descGlow {
             0%, 100% { text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); color: #ffcc00; }
-            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1); color: #fffbe6; }
+            50% { text-shadow: 0 0 25px rgba(255, 204, 0, 1), 0 0 35px rgba(255, 255, 255, 0.5); color: #fffbe6; }
         }
         .desc-fixed { font-size: 18px; font-weight: bold; margin-bottom: 30px; animation: descGlow 3s infinite; line-height: 1.5; max-width: 90%; }
 
-        /* تصميم الأزرار وحركة الأيقونات */
-        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        /* حركة الأيقونات (القفز والتكبير) للهواتف */
+        @keyframes phoneBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 8px white); }
+        }
+
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
         .link-btn { 
             color: white; text-decoration: none; padding: 16px 20px; border-radius: 15px; 
             font-weight: bold; display: flex; align-items: center; justify-content: space-between; 
             font-size: 18px; transition: 0.3s; cursor: pointer; border: none;
         }
-        .link-btn i { font-size: 2.2rem; animation: iconBounce 2s infinite ease-in-out; }
 
-        /* ألوان التطبيقات */
+        /* تطبيق الحركة على أيقونات فايبر وواتساب */
+        .viber i, .whatsapp i { font-size: 2.2rem; animation: phoneBounce 2s infinite ease-in-out; }
+        .link-btn i { font-size: 2.2rem; } /* حجم الأيقونات العادية */
+
+        /* ألوان الأزرار */
         .tiktok { background: #000000; border: 1px solid #ff0050; }
         .facebook { background: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -77,7 +89,7 @@
         .whatsapp { background: #25d366; }
         .viber { background: #7360f2; }
 
-        /* النوافذ المنبثقة للـ QR */
+        /* النوافذ المنبثقة */
         .modal-style {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center;
