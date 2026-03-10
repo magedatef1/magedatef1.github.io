@@ -9,6 +9,7 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 600px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
+        /* أنيميشن الصورة الشخصية */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
@@ -33,34 +34,69 @@
         }
         .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; animation: descGlow 3s infinite; line-height: 1.6; }
 
-        @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
+        /* إعدادات شبكة الروابط */
         .links-container { 
             width: 100%; 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
-            gap: 12px; 
+            gap: 15px; 
+        }
+
+        /* --- الأزرار بالحواف المتحركة --- */
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
         }
 
         .link-btn { 
+            position: relative;
             color: white; text-decoration: none; 
             padding: 12px 10px; 
-            border-radius: 12px; 
+            border-radius: 15px; 
             font-weight: bold; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
             font-size: 14px; 
+            overflow: hidden; /* لإخفاء الزوائد */
+            z-index: 1;
             transition: 0.3s;
-            gap: 8px;
+            min-height: 80px;
         }
-        
-        .link-btn i { font-size: 1.8rem; animation: iconBounce 0.5s infinite ease-in-out; } 
 
+        /* طبقة الحواف الملونة المتحركة */
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            z-index: -2;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(#555, #555), linear-gradient(#fff, #fff), linear-gradient(#555, #555);
+            animation: rotate 4s linear infinite;
+        }
+
+        /* طبقة الخلفية الأصلية للزر */
+        .link-btn::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 3px; /* سمك الحافة المتحركة */
+            top: 3px;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+            background: inherit;
+            border-radius: 12px;
+        }
+
+        .link-btn i { font-size: 1.8rem; margin-bottom: 5px; z-index: 2; }
+        .link-btn span { z-index: 2; }
+
+        /* ألوان الخلفيات */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -69,8 +105,8 @@
         .wechat { background-color: #07C160; }
         .line { background-color: #00c300; }
         .upscrolled { background-color: #8b5cf6; }
-        .snapchat { background-color: #fffc00; color: Cyan/Turquoise; }
-        .snapchat i { color: black; }
+        .snapchat { background-color: #fffc00; }
+        .snapchat i, .snapchat span { color: black; }
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
         .telegram { background-color: #0088cc; }
@@ -78,10 +114,10 @@
         .viber { background-color: #7360f2; }
         .imo { background-color: #2b99ff; }
 
+        /* المودال (النافذة المنبثقة) */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
         .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
         .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-        .modal-content p { font-weight: bold; margin: 5px 0; }
         .modal-content button { margin-top: 10px; padding: 10px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; }
     </style>
 </head>
