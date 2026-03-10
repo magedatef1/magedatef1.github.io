@@ -81,6 +81,7 @@
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
         .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
         .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+        .modal-content p { font-weight: bold; margin: 5px 0; }
         .modal-content button { margin-top: 10px; padding: 10px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; }
     </style>
 </head>
@@ -105,21 +106,40 @@
             <a href="https://www.instagram.com/magedatef13" class="link-btn instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
             <a href="https://twitter.com/magedatef23" class="link-btn twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
             <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><i class="fab fa-threads"></i><span>Threads</span></a>
+            
             <div onclick="openModal('wechat')" class="link-btn wechat" style="cursor:pointer"><i class="fab fa-weixin"></i><span>WeChat</span></div>
             <div onclick="openModal('line-modal')" class="link-btn line" style="cursor:pointer"><i class="fab fa-line"></i><span>LINE</span></div>
+            
             <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><i class="fas fa-arrow-up"></i><span>UpScrolled</span></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><i class="fab fa-snapchat-ghost"></i><span>Snapchat</span></a>
             <a href="https://vk.com/magedatef" class="link-btn vk"><i class="fab fa-vk"></i><span>VK</span></a>
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><i class="fab fa-odnoklassniki"></i><span>OK.ru</span></a>
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><i class="fab fa-telegram-plane"></i><span>Telegram</span></a>
+            
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp 1</span></a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp 2</span></a>
             <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp 3</span></a>
+            
             <div onclick="openModal('viber1')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 1</span></div>
             <div onclick="openModal('viber2')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 2</span></div>
             <div onclick="openModal('viber3')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 3</span></div>
             
             <div onclick="openModal('imo-modal')" class="link-btn imo" style="cursor:pointer"><i class="fas fa-comment-dots"></i><span>imo</span></div>
+        </div>
+    </div>
+
+    <div id="wechat" class="modal" onclick="closeModal('wechat')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./wechat_qr.jpg">
+            <button onclick="closeModal('wechat')">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="line-modal" class="modal" onclick="closeModal('line-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./line_qr.jpg"> 
+            <p>ID: magedatef12051996</p>
+            <button onclick="closeModal('line-modal')">إغلاق</button>
         </div>
     </div>
 
@@ -131,13 +151,25 @@
         </div>
     </div>
 
-    <div id="line-modal" class="modal" onclick="closeModal('line-modal')">
+    <div id="viber1" class="modal" onclick="closeModal('viber1')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./line_qr.jpg"> 
-            <p>ID: magedatef12051996</p>
-            <button onclick="closeModal('line-modal')">إغلاق</button>
+            <img src="./viber_qr1.jpg"><p>+201503461842</p>
+            <button onclick="closeModal('viber1')">إغلاق</button>
         </div>
     </div>
+    <div id="viber2" class="modal" onclick="closeModal('viber2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./viber_qr2.jpg"><p>+201211853202</p>
+            <button onclick="closeModal('viber2')">إغلاق</button>
+        </div>
+    </div>
+    <div id="viber3" class="modal" onclick="closeModal('viber3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./viber_qr3.jpg"><p>+20152719470</p>
+            <button onclick="closeModal('viber3')">إغلاق</button>
+        </div>
+    </div>
+
     <script>
         function openModal(id) { document.getElementById(id).style.display = 'flex'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
