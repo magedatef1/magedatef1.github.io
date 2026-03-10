@@ -6,58 +6,57 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        :root { --ios-radius: 14px; }
-        body { background-color: #0b0b0b; color: white; text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; padding-bottom: 50px; }
-        .container { max-width: 430px; margin: auto; display: flex; flex-direction: column; align-items: center; }
+        body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
-        /* تأثير نبض صورة البروفايل */
         @keyframes borderPulse {
-            0%, 100% { border-color: rgba(0, 210, 255, 0.4); box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
-            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 25px rgba(0, 210, 255, 0.7); }
+            0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
+            50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
         }
-        .profile-img { width: 105px; height: 105px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 12px; animation: borderPulse 3s infinite; }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; animation: borderPulse 3s infinite; }
 
-        /* الاسم والتوثيق اللامع */
-        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 5px 0; }
-        @keyframes intenseGlow { 0%, 100% { text-shadow: 0 0 8px rgba(0, 210, 255, 0.5); color: #00d2ff; } 50% { text-shadow: 0 0 25px rgba(0, 210, 255, 0.9); color: #ffffff; } }
-        .name-sparkle { font-size: 32px; font-weight: 800; animation: intenseGlow 2.5s infinite; margin: 0; }
-        .verified-badge { color: #1da1f2; font-size: 24px; animation: intenseGlow 2.5s infinite; }
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0; }
+        @keyframes intenseGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; }
+            50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #ffffff; }
+        }
+        .name-sparkle { font-size: 34px; font-weight: bold; animation: intenseGlow 2.5s infinite; margin: 0; }
+        .verified-badge { color: #1877f2; font-size: 26px; animation: intenseGlow 2.5s infinite; }
 
-        /* السيرة الذاتية (Bio) */
-        @keyframes bioGlow { 0%, 100% { color: #ffcc00; text-shadow: 0 0 5px rgba(255, 204, 0, 0.4); } 50% { color: #fffbe6; text-shadow: 0 0 15px rgba(255, 204, 0, 0.8); } }
-        .bio-text { font-size: 18px; font-weight: 600; margin: 10px 0 25px; animation: bioGlow 3s infinite; line-height: 1.5; }
+        @keyframes descGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; }
+            50% { text-shadow: 0 0 30px rgba(255, 204, 0, 1); color: #fffbe6; }
+        }
+        .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; animation: descGlow 3s infinite; line-height: 1.6; }
 
-        /* حركة الأيقونات (نبض الأيفون) */
-        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 
-        .links-container { width: 100%; display: flex; flex-direction: column; gap: 10px; }
-        .link-btn { color: white; text-decoration: none; padding: 14px 18px; border-radius: var(--ios-radius); font-weight: 700; display: flex; align-items: center; justify-content: space-between; font-size: 16px; transition: transform 0.2s; }
-        .link-btn:active { transform: scale(0.97); }
-        .link-btn i, .link-btn img { font-size: 2rem; width: 32px; height: 32px; animation: iconBounce 2s infinite ease-in-out; object-fit: contain; }
+        .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+        .link-btn { color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; font-size: 17px; transition: 0.3s; cursor: pointer; }
+        .link-btn i { font-size: 2.1rem; animation: iconBounce 2s infinite ease-in-out; }
 
-        /* الألوان والروابط */
+        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .twitter { background-color: #1da1f2; }
-        .threads { background-color: #000000; border: 1px solid #333; }
+        .threads { background-color: #000000; border: 1px solid #444; }
         .wechat { background-color: #07C160; }
-        .line-app { background-color: #00c300; }
+        .line { background-color: #00B900; }
         .upscrolled { background-color: #8b5cf6; }
         .snapchat { background-color: #fffc00; color: black; }
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
-        
-        /* زر جرافاتار بالأيقونة الزرقاء */
         .gravatar { background-color: #ffffff; color: #1e8cbe; }
-        .grav-icon { width: 32px; height: 32px; background-color: #1e8cbe; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: bold; border: 2px solid #1e8cbe; }
-
         .telegram { background-color: #0088cc; }
         .whatsapp { background-color: #25d366; }
         .viber { background-color: #7360f2; }
 
-        /* شريط سفلي نمط أيفون */
-        .ios-bar { width: 130px; height: 5px; background: rgba(255,255,255,0.3); border-radius: 10px; margin: 30px auto 10px; }
+        /* تصميم النافذة */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 85%; max-width: 320px; }
+        .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+        .modal-content button { margin-top: 10px; padding: 12px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -66,11 +65,11 @@
         <img src="https://github.com/magedatef1.png" class="profile-img">
         
         <div class="name-wrapper">
-            <i class="fas fa-check-circle verified-badge"></i>
             <h2 class="name-sparkle">Maged Atef</h2>
+            <i class="fas fa-check-circle verified-badge"></i>
         </div>
 
-        <div class="bio-text">
+        <div class="desc-fixed">
             أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br>
             واصنع من كل لحظة قصة جميلة
         </div>
@@ -82,32 +81,76 @@
             <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
             <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
             
-            <a href="#" class="link-btn wechat"><span>ويشات | WeChat</span><i class="fab fa-weixin"></i></a>
-            <a href="https://line.me/ti/p/~magdatef2" class="link-btn line-app"><span>لاين | LINE</span><i class="fab fa-line"></i></a>
-
+            <div onclick="openModal('wechat')" class="link-btn wechat"><span>ويشات | WeChat</span><i class="fab fa-weixin"></i></div>
+            <div onclick="openModal('line')" class="link-btn line"><span>لاين | LINE</span><i class="fab fa-line"></i></div>
+            
             <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
             <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
             
-            <a href="https://gravatar.com/magedatetf2" class="link-btn gravatar">
-                <span>جرافاتار | Gravatar</span>
-                <div class="grav-icon"><i class="fab fa-gravatar"></i></div>
-            </a>
+            <a href="https://gravatar.com/magedatetf2" class="link-btn gravatar"><span>جرافاتار | Gravatar</span><i class="fab fa-gravatar" style="color: #1e8cbe;"></i></a>
 
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
             
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/3WQWS5XNJYVRN1" class="link-btn whatsapp"><span>واتساب 3 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
-
-            <a href="viber://chat?number=201228243646" class="link-btn viber"><span>فايبر 1 | Viber</span><i class="fab fa-viber"></i></a>
-            <a href="viber://chat?number=201508151213" class="link-btn viber"><span>فايبر 2 | Viber</span><i class="fab fa-viber"></i></a>
-            <a href="viber://chat?number=201026021665" class="link-btn viber"><span>فايبر 3 | Viber</span><i class="fab fa-viber"></i></a>
+            
+            <div onclick="openModal('viber1')" class="link-btn viber"><span>فايبر 1 | Viber</span><i class="fab fa-viber"></i></div>
+            <div onclick="openModal('viber2')" class="link-btn viber"><span>فايبر 2 | Viber</span><i class="fab fa-viber"></i></div>
+            <div onclick="openModal('viber3')" class="link-btn viber"><span>فايبر 3 | Viber</span><i class="fab fa-viber"></i></div>
         </div>
-
-        <div class="ios-bar"></div>
     </div>
 
+    <div id="wechat" class="modal" onclick="closeModal('wechat')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./wechat_qr.jpg">
+            <p style="font-weight: bold;">ID: magedatef12051996</p>
+            <button onclick="closeModal('wechat')">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="line" class="modal" onclick="closeModal('line')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./line_qr.jpg"> 
+            <button onclick="closeModal('line')">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="viber1" class="modal" onclick="closeModal('viber1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./viber_qr1.jpg">
+            <p>+201503461842</p>
+            <button onclick="closeModal('viber1')">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="viber2" class="modal" onclick="closeModal('viber2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./viber_qr2.jpg">
+            <p>+201211853202</p>
+            <button onclick="closeModal('viber2')">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="viber3" class="modal" onclick="closeModal('viber3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./viber_qr3.jpg">
+            <p>+20152719470</p>
+            <button onclick="closeModal('viber3')">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            if(modal) modal.style.display = 'flex';
+        }
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            if(modal) modal.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
