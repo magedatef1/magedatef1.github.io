@@ -33,7 +33,6 @@
         }
         .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; animation: descGlow 3s infinite; line-height: 1.6; }
 
-        /* سرعة الحركة 0.5 ثانية بناءً على رغبتك */
         @keyframes iconBounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
@@ -62,7 +61,6 @@
         
         .link-btn i { font-size: 1.8rem; animation: iconBounce 0.5s infinite ease-in-out; } 
 
-        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -83,11 +81,6 @@
         .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
         .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
         .modal-content button { margin-top: 10px; padding: 10px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; }
-
-        @media (max-width: 400px) {
-            .link-btn { font-size: 12px; }
-            .link-btn i { font-size: 1.5rem; }
-        }
     </style>
 </head>
 <body>
@@ -113,7 +106,7 @@
             <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><i class="fab fa-threads"></i><span>Threads</span></a>
             <div onclick="openModal('wechat')" class="link-btn wechat" style="cursor:pointer"><i class="fab fa-weixin"></i><span>WeChat</span></div>
             
-            <a href="https://line.me/ti/p/YOUR_ID" class="link-btn line"><i class="fab fa-line"></i><span>LINE</span></a>
+            <div onclick="openModal('line-modal')" class="link-btn line" style="cursor:pointer"><i class="fab fa-line"></i><span>LINE</span></div>
             
             <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><i class="fas fa-arrow-up"></i><span>UpScrolled</span></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><i class="fab fa-snapchat-ghost"></i><span>Snapchat</span></a>
@@ -126,6 +119,14 @@
             <div onclick="openModal('viber1')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 1</span></div>
             <div onclick="openModal('viber2')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 2</span></div>
             <div onclick="openModal('viber3')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 3</span></div>
+        </div>
+    </div>
+
+    <div id="line-modal" class="modal" onclick="closeModal('line-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./line_qr.jpg"> 
+            <p>ID: magedatef12051996</p>
+            <button onclick="closeModal('line-modal')">إغلاق</button>
         </div>
     </div>
 
