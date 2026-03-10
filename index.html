@@ -76,6 +76,7 @@
         .telegram { background-color: #0088cc; }
         .whatsapp { background-color: #25d366; }
         .viber { background-color: #7360f2; }
+        .imo { background-color: #2b99ff; } /* اللون الأزرق الخاص بـ imo */
 
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
         .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
@@ -119,6 +120,15 @@
             <div onclick="openModal('viber1')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 1</span></div>
             <div onclick="openModal('viber2')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 2</span></div>
             <div onclick="openModal('viber3')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 3</span></div>
+            
+            <div onclick="openModal('imo-modal')" class="link-btn imo" style="cursor:pointer"><i class="fas fa-comment-dots"></i><span>imo</span></div>
+        </div>
+    </div>
+
+    <div id="imo-modal" class="modal" onclick="closeModal('imo-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="./imo_qr.jpg"> <p>ID: gmaedatef12051996</p>
+            <button onclick="closeModal('imo-modal')">إغلاق</button>
         </div>
     </div>
 
