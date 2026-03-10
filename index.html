@@ -9,63 +9,43 @@
         body { background-color: #121212; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 450px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
+        /* تأثير نبض الصورة */
         @keyframes borderPulse {
             0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
         }
-        .profile-img { 
-            width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; 
-            margin-bottom: 15px; animation: borderPulse 3s infinite;
-        }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #00d2ff; margin-bottom: 15px; animation: borderPulse 3s infinite; }
 
-        .name-wrapper { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 10px; 
-            margin: 10px 0;
-            flex-direction: row;
-        }
-
-        @keyframes intenseGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; }
-            50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1), 0 0 45px rgba(255, 255, 255, 0.4); color: #ffffff; }
-        }
+        /* الاسم والتوثيق */
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0; flex-direction: row; }
+        @keyframes intenseGlow { 0%, 100% { text-shadow: 0 0 10px rgba(0, 210, 255, 0.6); color: #00d2ff; } 50% { text-shadow: 0 0 30px rgba(0, 210, 255, 1); color: #ffffff; } }
         .name-sparkle { font-size: 34px; font-weight: bold; animation: intenseGlow 2.5s infinite; margin: 0; }
         .verified-badge { color: #1877f2; font-size: 26px; animation: intenseGlow 2.5s infinite; }
 
-        @keyframes descGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; }
-            50% { text-shadow: 0 0 30px rgba(255, 204, 0, 1); color: #fffbe6; }
-        }
+        /* الوصف الذهبي */
+        @keyframes descGlow { 0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; } 50% { text-shadow: 0 0 30px rgba(255, 204, 0, 1); color: #fffbe6; } }
         .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; animation: descGlow 3s infinite; line-height: 1.6; }
 
-        @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
+        /* حركة الأيقونات */
+        @keyframes iconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
         .links-container { width: 100%; display: flex; flex-direction: column; gap: 12px; }
-        .link-btn { 
-            color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; 
-            font-weight: bold; display: flex; align-items: center; 
-            justify-content: space-between; font-size: 17px; transition: 0.3s;
-        }
-        
-        .link-btn i { font-size: 2.1rem; animation: iconBounce 2s infinite ease-in-out; } 
+        .link-btn { color: white; text-decoration: none; padding: 15px 20px; border-radius: 12px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; font-size: 17px; transition: 0.3s; }
+        .link-btn i { font-size: 2.1rem; animation: iconBounce 2s infinite ease-in-out; }
 
+        /* ألوان الأزرار */
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
         .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .twitter { background-color: #1da1f2; }
         .threads { background-color: #000000; border: 1px solid #444; }
         .wechat { background-color: #07C160; }
-        .line { background-color: #00B900; } /* لون تطبيق لاين */
         .upscrolled { background-color: #8b5cf6; }
         .snapchat { background-color: #fffc00; color: black; }
         .snapchat i { color: black; }
         .vk { background-color: #4c75a3; }
         .ok { background-color: #ed812b; }
+        .gravatar { background-color: #1e8cbe; } /* لون Gravatar الرسمي */
         .telegram { background-color: #0088cc; }
         .whatsapp { background-color: #25d366; }
         .viber { background-color: #7360f2; }
@@ -98,13 +78,13 @@
             <a href="https://twitter.com/magedatef23" class="link-btn twitter"><span>تويتر | Twitter</span><i class="fab fa-twitter"></i></a>
             <a href="https://www.threads.com/@magedatef13" class="link-btn threads"><span>ثريدز | Threads</span><i class="fab fa-threads"></i></a>
             <div onclick="openModal('wechat')" class="link-btn wechat" style="cursor:pointer"><span>ويشات | WeChat</span><i class="fab fa-weixin"></i></div>
-            
-            <div onclick="openModal('line')" class="link-btn line" style="cursor:pointer"><span>لاين | LINE</span><i class="fab fa-line"></i></div>
-            
             <a href="https://share.upscrolled.com/ar/user/1747dda8-83df-4607-98f4-fe5ec8433df9/" class="link-btn upscrolled"><span>UpScrolled</span><i class="fas fa-arrow-up"></i></a>
             <a href="https://www.snapchat.com/add/magedatef11" class="link-btn snapchat"><span>سناب شات | Snapchat</span><i class="fab fa-snapchat-ghost"></i></a>
             <a href="https://vk.com/magedatef" class="link-btn vk"><span>VK</span><i class="fab fa-vk"></i></a>
             <a href="https://ok.ru/profile/910150164494" class="link-btn ok"><span>OK.ru</span><i class="fab fa-odnoklassniki"></i></a>
+            
+            <a href="https://gravatar.com/magdatef2" class="link-btn gravatar"><span>جرافاتار | Gravatar</span><i class="fab fa-gravatar"></i></a>
+
             <a href="https://t.me/MagedAtef1" class="link-btn telegram"><span>تلجرام | Telegram</span><i class="fab fa-telegram-plane"></i></a>
             <a href="https://wa.me/qr/2RJGQMHOFZ27O1" class="link-btn whatsapp"><span>واتساب 1 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
             <a href="https://wa.me/qr/G5UNPYJSWHUBE1" class="link-btn whatsapp"><span>واتساب 2 | WhatsApp</span><i class="fab fa-whatsapp"></i></a>
@@ -121,37 +101,6 @@
             <button onclick="closeModal('wechat')">إغلاق</button>
         </div>
     </div>
-
-    <div id="line" class="modal" onclick="closeModal('line')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./line_qr.jpg"> 
-            <p style="font-weight: bold;">ID: magedatef12051996</p>
-            <button onclick="closeModal('line')">إغلاق</button>
-        </div>
-    </div>
-
-    <div id="viber1" class="modal" onclick="closeModal('viber1')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr1.jpg">
-            <p>201503461842+</p>
-            <button onclick="closeModal('viber1')">إغلاق</button>
-        </div>
-    </div>
-    <div id="viber2" class="modal" onclick="closeModal('viber2')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr2.jpg">
-            <p>201211853202+</p>
-            <button onclick="closeModal('viber2')">إغلاق</button>
-        </div>
-    </div>
-    <div id="viber3" class="modal" onclick="closeModal('viber3')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr3.jpg">
-            <p>20152719470+</p>
-            <button onclick="closeModal('viber3')">إغلاق</button>
-        </div>
-    </div>
-
     <script>
         function openModal(id) { document.getElementById(id).style.display = 'flex'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
