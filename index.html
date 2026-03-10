@@ -10,7 +10,7 @@
         .container { max-width: 600px; margin: auto; display: flex; flex-direction: column; align-items: center; }
 
         @keyframes borderPulse {
-            0%, 80% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
+            0%, 100% { border-color: rgba(0, 210, 255, 0.5); box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
             50% { border-color: rgba(0, 210, 255, 1); box-shadow: 0 0 35px rgba(0, 210, 255, 0.8); }
         }
         .profile-img { 
@@ -27,41 +27,32 @@
         .name-sparkle { font-size: 34px; font-weight: bold; animation: intenseGlow 2.5s infinite; margin: 0; }
         .verified-badge { color: #1877f2; font-size: 26px; animation: intenseGlow 2.5s infinite; }
 
-        @keyframes descGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); color: #ffcc00; }
-            50% { text-shadow: 0 0 30px rgba(255, 204, 0, 1); color: #fffbe6; }
-        }
-        .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; animation: descGlow 3s infinite; line-height: 1.6; }
-
-        @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); } /* تقليل التكبير قليلاً ليتناسب مع الحجم الجديد */
-        }
+        .desc-fixed { font-size: 19px; font-weight: bold; margin-bottom: 25px; line-height: 1.6; color: #ffcc00; }
 
         .links-container { 
             width: 100%; 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
-            gap: 15px; /* زيادة المسافة بين الأزرار */
+            gap: 12px; 
         }
 
         .link-btn { 
             color: white; text-decoration: none; 
-            padding: 18px 10px; /* زيادة الحشو الرأسي لجعل الزر أكبر */
-            border-radius: 15px; 
+            padding: 15px 10px; 
+            border-radius: 12px; 
             font-weight: bold; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            font-size: 18px; /* تكبير حجم النص */
+            font-size: 16px; 
             transition: 0.3s;
-            gap: 10px;
+            gap: 8px;
         }
         
+        /* تعديل حجم الأيقونة إلى 70 (أي ما يعادل تقريباً 1.4rem) */
         .link-btn i { 
-            font-size: 2.2rem; /* تكبير حجم الأيقونة */
-            animation: iconBounce 0.5s infinite ease-in-out; 
+            font-size: 1.4rem; 
         } 
 
         .tiktok { background-color: #ff0050; }
@@ -81,12 +72,10 @@
         .viber { background-color: #7360f2; }
         .imo { background-color: #2b99ff; }
 
-        /* تعديلات المودال (النافذة المنبثقة) */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 25px; border-radius: 20px; color: black; text-align: center; width: 85%; max-width: 350px; }
-        .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-        .modal-content p { font-size: 18px; font-weight: bold; margin: 10px 0; }
-        .modal-content button { margin-top: 15px; padding: 12px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; font-size: 16px; }
+        .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
+        .modal-content img { width: 100%; border-radius: 10px; }
+        .modal-content button { margin-top: 10px; padding: 10px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -132,45 +121,17 @@
         </div>
     </div>
 
-    <div id="wechat" class="modal" onclick="closeModal('wechat')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./wechat_qr.jpg">
-            <button onclick="closeModal('wechat')">إغلاق</button>
-        </div>
-    </div>
-
-    <div id="line-modal" class="modal" onclick="closeModal('line-modal')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./line_qr.jpg"> 
-            <p>ID: magedatef12051996</p>
-            <button onclick="closeModal('line-modal')">إغلاق</button>
-        </div>
-    </div>
-
     <div id="imo-modal" class="modal" onclick="closeModal('imo-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./imo_qr.jpg"> 
-            <p>ID: magedatef12051996</p>
+            <img src="./imo_qr.jpg"> <p>ID: magedatef12051996</p>
             <button onclick="closeModal('imo-modal')">إغلاق</button>
         </div>
     </div>
-
-    <div id="viber1" class="modal" onclick="closeModal('viber1')">
+    
+    <div id="line-modal" class="modal" onclick="closeModal('line-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr1.jpg"><p>+201503461842</p>
-            <button onclick="closeModal('viber1')">إغلاق</button>
-        </div>
-    </div>
-    <div id="viber2" class="modal" onclick="closeModal('viber2')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr2.jpg"><p>+201211853202</p>
-            <button onclick="closeModal('viber2')">إغلاق</button>
-        </div>
-    </div>
-    <div id="viber3" class="modal" onclick="closeModal('viber3')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img src="./viber_qr3.jpg"><p>+20152719470</p>
-            <button onclick="closeModal('viber3')">إغلاق</button>
+            <img src="./line_qr.jpg"> <p>ID: magedatef12051996</p>
+            <button onclick="closeModal('line-modal')">إغلاق</button>
         </div>
     </div>
 
