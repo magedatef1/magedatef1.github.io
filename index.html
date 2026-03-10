@@ -35,31 +35,34 @@
 
         @keyframes iconBounce {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.15); } /* تقليل التكبير قليلاً ليتناسب مع الحجم الجديد */
         }
 
         .links-container { 
             width: 100%; 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
-            gap: 12px; 
+            gap: 15px; /* زيادة المسافة بين الأزرار */
         }
 
         .link-btn { 
             color: white; text-decoration: none; 
-            padding: 12px 10px; 
-            border-radius: 12px; 
+            padding: 18px 10px; /* زيادة الحشو الرأسي لجعل الزر أكبر */
+            border-radius: 15px; 
             font-weight: bold; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            font-size: 14px; 
+            font-size: 18px; /* تكبير حجم النص */
             transition: 0.3s;
-            gap: 8px;
+            gap: 10px;
         }
         
-        .link-btn i { font-size: 1.5rem; animation: iconBounce 0.5s infinite ease-in-out; } 
+        .link-btn i { 
+            font-size: 2.2rem; /* تكبير حجم الأيقونة */
+            animation: iconBounce 0.5s infinite ease-in-out; 
+        } 
 
         .tiktok { background-color: #ff0050; }
         .facebook { background-color: #1877f2; }
@@ -78,11 +81,12 @@
         .viber { background-color: #7360f2; }
         .imo { background-color: #2b99ff; }
 
+        /* تعديلات المودال (النافذة المنبثقة) */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 20px; border-radius: 20px; color: black; text-align: center; width: 80%; max-width: 320px; }
+        .modal-content { background: white; padding: 25px; border-radius: 20px; color: black; text-align: center; width: 85%; max-width: 350px; }
         .modal-content img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-        .modal-content p { font-weight: bold; margin: 5px 0; }
-        .modal-content button { margin-top: 10px; padding: 10px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; }
+        .modal-content p { font-size: 18px; font-weight: bold; margin: 10px 0; }
+        .modal-content button { margin-top: 15px; padding: 12px; border-radius: 10px; border: none; background: #333; color: white; width: 100%; cursor: pointer; font-size: 16px; }
     </style>
 </head>
 <body>
@@ -124,7 +128,7 @@
             <div onclick="openModal('viber2')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 2</span></div>
             <div onclick="openModal('viber3')" class="link-btn viber" style="cursor:pointer"><i class="fab fa-viber"></i><span>Viber 3</span></div>
             
-            <div onclick="openModal('imo-modal')" class="link-btn imo" style="cursor:pointer"><i class="fas fa-comment-dots"></i><span>imo</span></div>
+            <div onclick="openModal('imo-modal')" class="link-btn imo" style="cursor:pointer; grid-column: span 2; width: 100%;"><i class="fas fa-comment-dots"></i><span>imo</span></div>
         </div>
     </div>
 
