@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    body { 
+        margin: 0; padding: 0; 
+        background-image: url('https://i.imgur.com/8Qz5S8O.jpg'); 
+        background-size: cover; 
+        background-position: center; 
+        background-attachment: fixed; 
+        font-family: 'Segoe UI', sans-serif; 
+        display: flex; justify-content: center; align-items: center; 
+        min-height: 100vh; width: 100vw;
+    }
+    .card { 
+        width: 90%; max-width: 800px; 
+        background: rgba(0, 0, 0, 0.5); 
+        backdrop-filter: blur(25px); 
+        padding: 60px 40px; 
+        border-radius: 50px; 
+        border: 1px solid rgba(255,255,255,0.1); 
+        text-align: center; 
+        margin: 20px;
+    }
+    .profile-img { width: 200px; height: 200px; border-radius: 50%; border: 5px solid #00d2ff; margin-bottom: 25px; }
+    .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    .name { font-size: 48px; font-weight: bold; color: #fff; margin: 0; }
+    .verified { color: #00d2ff; font-size: 32px; }
+    .bio { font-size: 26px; color: #ffcc00; margin-bottom: 50px; line-height: 1.6; }
+    .links { display: flex; flex-direction: column; gap: 25px; }
+    .btn { 
+        background: rgba(255, 255, 255, 0.1); 
+        color: white; text-decoration: none; 
+        padding: 30px; border-radius: 40px; 
+        font-size: 28px; font-weight: bold; 
+        display: flex; align-items: center; justify-content: center; 
+        transition: 0.3s; border: 1px solid rgba(255,255,255,0.15); 
+    }
+    .btn i { margin-left: 25px; font-size: 36px; animation: bounce 2s infinite; }
+    .btn:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.03); }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+</style>
+</head>
+<body>
+<div class="card">
+    <img src="https://github.com/magedatef1.png" class="profile-img">
+    <div class="name-wrapper">
+        <h2 class="name">Maged Atef</h2>
+        <i class="fas fa-check-circle verified"></i>
+    </div>
+    <div class="bio">أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨ <br> واصنع من كل لحظة قصة جميلة</div>
+    <div class="links">
+        <a href="https://www.facebook.com/share/1bE1EhMq4S/" class="btn"><i class="fab fa-facebook" style="color:#1877f2"></i> Facebook</a>
+        <a href="https://www.tiktok.com/@magedatef12" class="btn"><i class="fab fa-tiktok" style="color:#ff0050"></i> TikTok</a>
+        <a href="https://twitter.com/magedatef23" class="btn"><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</a>
+        <a href="https://www.instagram.com/magedatef13" class="btn"><i class="fab fa-instagram" style="color:#e1306c"></i> Instagram</a>
+        <a href="https://www.snapchat.com/add/magedatef11" class="btn"><i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat</a>
+        <a href="https://www.threads.com/@magedatef13" class="btn"><i class="fab fa-threads" style="color:#ffffff"></i> Threads</a>
+        <a href="https://ok.ru/profile/910150164494" class="btn"><i class="fab fa-odnoklassniki" style="color:#ed812b"></i> OK.ru</a>
+        <a href="https://vk.com/magedatef" class="btn"><i class="fab fa-vk" style="color:#4c75a3"></i> VK</a>
+        <a href="https://t.me/MagedAtef1" class="btn"><i class="fab fa-telegram" style="color:#0088cc"></i> Telegram</a>
+    </div>
+</div>
+</body>
+</html>
