@@ -6,48 +6,95 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* الخلفية والترتيب العام */
+        /* الأساسيات */
         body { 
             background-image: url('background.jpg'); 
             background-size: cover; background-position: center; 
             background-attachment: fixed; color: white; text-align: center; 
-            font-family: sans-serif; margin: 0; padding: 20px; 
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.4);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; padding: 20px; min-height: 100vh; 
+            display: flex; align-items: center; justify-content: center;
         }
-        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 600px; width: 100%; }
+
+        /* الصورة الشخصية */
+        .profile-img { 
+            width: 160px; height: 160px; border-radius: 50%; 
+            border: 4px solid #fff; margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* --- الحركات (Animations) --- */
         
-        /* الصورة والاسم */
-        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0,210,255,0.3); }
-        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; }
-        .name-text { font-size: 40px; font-weight: bold; color: #fff; margin: 0; }
-        .verified-badge { color: #00d2ff; font-size: 30px; }
-        .desc-fixed { font-size: 20px; font-weight: bold; color: #ffcc00; margin-bottom: 30px; }
+        /* 1. حركة الاسم: اهتزاز خفيف (Jiggle) */
+        @keyframes jiggle {
+            0% { transform: translate(1px, 1px); }
+            50% { transform: translate(-1px, -1px); }
+            100% { transform: translate(1px, 1px); }
+        }
+        .name-wrapper { 
+            display: flex; align-items: center; justify-content: center; 
+            gap: 10px; margin: 10px 0; 
+        }
+        .name-text { 
+            font-size: 40px; font-weight: bold; color: #fff; margin: 0;
+            animation: jiggle 0.5s infinite; /* تفعيل الحركة */
+            animation-delay: 2s; /* تبدأ الحركة كل ثانيتين */
+        }
+        .verified-badge { color: #00d2ff; font-size: 28px; }
 
-        /* تأثير حركة الأيقونات (النبض) */
-        @keyframes iconPulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 210, 255, 0)); }
-            50% { transform: scale(1.2); filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.8)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 210, 255, 0))); }
+        /* 2. الوصف */
+        .desc-fixed { 
+            font-size: 18px; font-weight: 600; color: #ffcc00; 
+            margin-bottom: 35px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* الأزرار بتأثير الزجاج */
-        .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
+        /* 3. حركة الأيقونات: نبض (Pulse) */
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* الأزرار (الشكل القديم الاحترافي) */
+        .links-container { width: 100%; display: grid; gap: 18px; }
         .link-btn { 
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(10px);
-            color: white; text-decoration: none; padding: 25px; border-radius: 25px;
-            font-size: 24px; font-weight: bold; border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex; align-items: center; justify-content: center; gap: 20px;
-            transition: 0.4s; cursor: pointer;
+            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة صلبة */
+            color: white; text-decoration: none; padding: 22px 30px; 
+            border-radius: 50px; /* حواف دائرية جداً */
+            font-size: 24px; font-weight: bold; 
+            border: 2px solid #00d2ff; /* الحدود الزرقاء */
+            display: flex; align-items: center; justify-content: center; 
+            gap: 20px; transition: all 0.3s ease; cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        .link-btn:hover { background: rgba(0, 210, 255, 0.3); transform: scale(1.02); border-color: #00d2ff; }
-        .link-btn i { font-size: 36px; animation: iconPulse 3s infinite ease-in-out; }
+        
+        /* تأثير عند الضغط أو المرور بالفأرة */
+        .link-btn:hover { 
+            background: #00d2ff; color: #000;
+            transform: translateY(-3px); /* يرتفع للأعلى قليلاً */
+            box-shadow: 0 6px 12px rgba(0,210,255,0.3);
+        }
+        .link-btn:hover i { color: #000 !important; } /* تغيير لون الأيقونة عند Hover */
+
+        /* تطبيق الحركة على الأيقونات */
+        .link-btn i { 
+            font-size: 32px; 
+            animation: pulseIcon 2s infinite; /* تفعيل حركة النبض */
+        }
+
+        /* تعديل بسيط لأحجام الشاشات الصغيرة */
+        @media (max-width: 480px) {
+            .profile-img { width: 130px; height: 130px; }
+            .name-text { font-size: 32px; }
+            .link-btn { font-size: 20px; padding: 18px; }
+            .link-btn i { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/magedatef1.png" class="profile-img">
+        <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef">
         <div class="name-wrapper">
             <h1 class="name-text">Maged Atef</h1>
             <i class="fas fa-check-circle verified-badge"></i>
