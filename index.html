@@ -6,17 +6,43 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body { background-image: url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 20px; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        /* الخلفية والترتيب العام */
+        body { 
+            background-image: url('background.jpg'); 
+            background-size: cover; background-position: center; 
+            background-attachment: fixed; color: white; text-align: center; 
+            font-family: sans-serif; margin: 0; padding: 20px; 
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.4);
+        }
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
-        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; margin-bottom: 20px; }
-        @keyframes pulseText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
-        .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
-        .verified-badge { color: #00d2ff; font-size: 34px; }
-        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
+        
+        /* الصورة والاسم */
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0,210,255,0.3); }
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; }
+        .name-text { font-size: 40px; font-weight: bold; color: #fff; margin: 0; }
+        .verified-badge { color: #00d2ff; font-size: 30px; }
+        .desc-fixed { font-size: 20px; font-weight: bold; color: #ffcc00; margin-bottom: 30px; }
+
+        /* تأثير حركة الأيقونات (النبض) */
+        @keyframes iconPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 210, 255, 0)); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 210, 255, 0))); }
+        }
+
+        /* الأزرار بتأثير الزجاج */
         .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
-        .link-btn { background: rgba(0,0,0,0.6); color: white; text-decoration: none; padding: 30px; border-radius: 25px; font-size: 28px; font-weight: bold; border: 2px solid #00d2ff; display: flex; align-items: center; justify-content: center; gap: 25px; transition: 0.3s; cursor: pointer; }
-        .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
+        .link-btn { 
+            background: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(10px);
+            color: white; text-decoration: none; padding: 25px; border-radius: 25px;
+            font-size: 24px; font-weight: bold; border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            transition: 0.4s; cursor: pointer;
+        }
+        .link-btn:hover { background: rgba(0, 210, 255, 0.3); transform: scale(1.02); border-color: #00d2ff; }
+        .link-btn i { font-size: 36px; animation: iconPulse 3s infinite ease-in-out; }
     </style>
 </head>
 <body>
