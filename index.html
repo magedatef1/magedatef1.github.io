@@ -60,11 +60,19 @@
     </div>
 
     <script>
+        // تنبيه عند فتح الموقع
+        window.onload = function() {
+            const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
+            const chatId = "5591628026";
+            const message = "👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!";
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+        };
+
+        // تنبيه عند الضغط على الروابط
         function sendNotification(platform, url) {
             const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
             const chatId = "5591628026";
             const message = "🔔 شخص ما ضغط على رابط: " + platform;
-
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
             window.open(url, '_blank');
         }
