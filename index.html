@@ -38,8 +38,8 @@
         }
         .name-text { 
             font-size: 40px; font-weight: bold; color: #fff; margin: 0;
-            animation: jiggle 0.5s infinite; /* تفعيل الحركة */
-            animation-delay: 2s; /* تبدأ الحركة كل ثانيتين */
+            animation: jiggle 0.5s infinite;
+            animation-delay: 2s;
         }
         .verified-badge { color: #00d2ff; font-size: 28px; }
 
@@ -56,34 +56,31 @@
             100% { transform: scale(1); }
         }
 
-        /* الأزرار (الشكل القديم الاحترافي) */
+        /* الأزرار (شكل صلب واحترافي) */
         .links-container { width: 100%; display: grid; gap: 18px; }
         .link-btn { 
-            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة صلبة */
+            background: rgba(0, 0, 0, 0.7); /* لون خلفية صلب */
             color: white; text-decoration: none; padding: 22px 30px; 
-            border-radius: 50px; /* حواف دائرية جداً */
+            border-radius: 50px; 
             font-size: 24px; font-weight: bold; 
-            border: 2px solid #00d2ff; /* الحدود الزرقاء */
+            border: 2px solid #00d2ff; 
             display: flex; align-items: center; justify-content: center; 
             gap: 20px; transition: all 0.3s ease; cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         
-        /* تأثير عند الضغط أو المرور بالفأرة */
         .link-btn:hover { 
             background: #00d2ff; color: #000;
-            transform: translateY(-3px); /* يرتفع للأعلى قليلاً */
+            transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,210,255,0.3);
         }
-        .link-btn:hover i { color: #000 !important; } /* تغيير لون الأيقونة عند Hover */
+        .link-btn:hover i { color: #000 !important; }
 
-        /* تطبيق الحركة على الأيقونات */
         .link-btn i { 
             font-size: 32px; 
-            animation: pulseIcon 2s infinite; /* تفعيل حركة النبض */
+            animation: pulseIcon 2s infinite;
         }
 
-        /* تعديل بسيط لأحجام الشاشات الصغيرة */
         @media (max-width: 480px) {
             .profile-img { width: 130px; height: 130px; }
             .name-text { font-size: 32px; }
