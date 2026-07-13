@@ -6,92 +6,41 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* الأساسيات */
         body { 
             background-image: url('background.jpg'); 
             background-size: cover; background-position: center; 
             background-attachment: fixed; color: white; text-align: center; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; padding: 20px; min-height: 100vh; 
-            display: flex; align-items: center; justify-content: center;
+            font-family: sans-serif; margin: 0; padding: 20px; 
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
         }
-        .container { max-width: 600px; width: 100%; }
-
-        /* الصورة الشخصية */
-        .profile-img { 
-            width: 160px; height: 160px; border-radius: 50%; 
-            border: 4px solid #fff; margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        /* --- الحركات (Animations) --- */
+        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* 1. حركة الاسم: اهتزاز خفيف (Jiggle) */
-        @keyframes jiggle {
-            0% { transform: translate(1px, 1px); }
-            50% { transform: translate(-1px, -1px); }
-            100% { transform: translate(1px, 1px); }
-        }
-        .name-wrapper { 
-            display: flex; align-items: center; justify-content: center; 
-            gap: 10px; margin: 10px 0; 
-        }
-        .name-text { 
-            font-size: 40px; font-weight: bold; color: #fff; margin: 0;
-            animation: jiggle 0.5s infinite;
-            animation-delay: 2s;
-        }
-        .verified-badge { color: #00d2ff; font-size: 28px; }
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; margin-bottom: 20px; }
+        
+        /* حركة الاسم والوصف */
+        @keyframes pulseText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
+        .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
+        .verified-badge { color: #00d2ff; font-size: 34px; }
+        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
 
-        /* 2. الوصف */
-        .desc-fixed { 
-            font-size: 18px; font-weight: 600; color: #ffcc00; 
-            margin-bottom: 35px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        /* 3. حركة الأيقونات: نبض (Pulse) */
-        @keyframes pulseIcon {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-
-        /* الأزرار (شكل صلب واحترافي) */
-        .links-container { width: 100%; display: grid; gap: 18px; }
+        /* حركة الأزرار */
+        @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
+        .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
         .link-btn { 
-            background: rgba(0, 0, 0, 0.7); /* لون خلفية صلب */
-            color: white; text-decoration: none; padding: 22px 30px; 
-            border-radius: 50px; 
-            font-size: 24px; font-weight: bold; 
-            border: 2px solid #00d2ff; 
-            display: flex; align-items: center; justify-content: center; 
-            gap: 20px; transition: all 0.3s ease; cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.6); 
+            color: white; text-decoration: none; padding: 30px; border-radius: 25px;
+            font-size: 28px; font-weight: bold; border: 2px solid #00d2ff;
+            display: flex; align-items: center; justify-content: center; gap: 25px;
+            transition: 0.3s; cursor: pointer; border: 2px solid #00d2ff;
         }
-        
-        .link-btn:hover { 
-            background: #00d2ff; color: #000;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,210,255,0.3);
-        }
-        .link-btn:hover i { color: #000 !important; }
-
-        .link-btn i { 
-            font-size: 32px; 
-            animation: pulseIcon 2s infinite;
-        }
-
-        @media (max-width: 480px) {
-            .profile-img { width: 130px; height: 130px; }
-            .name-text { font-size: 32px; }
-            .link-btn { font-size: 20px; padding: 18px; }
-            .link-btn i { font-size: 28px; }
-        }
+        .link-btn:hover { background: rgba(0,210,255,0.2); }
+        .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef">
+        <img src="https://github.com/magedatef1.png" class="profile-img">
         <div class="name-wrapper">
             <h1 class="name-text">Maged Atef</h1>
             <i class="fas fa-check-circle verified-badge"></i>
@@ -105,6 +54,8 @@
             <button class="link-btn" onclick="sendNotification('Twitter', 'https://twitter.com/magedatef23')"><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</button>
             <button class="link-btn" onclick="sendNotification('Snapchat', 'https://www.snapchat.com/add/magedatef11')"><i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat</button>
             <button class="link-btn" onclick="sendNotification('Telegram', 'https://t.me/MagedAtef1')"><i class="fab fa-telegram" style="color:#0088cc"></i> Telegram</button>
+            <button class="link-btn" onclick="sendNotification('VK', 'https://vk.com/magedatef')"><i class="fab fa-vk" style="color:#4c75a3"></i> VK</button>
+            <button class="link-btn" onclick="sendNotification('OK.ru', 'https://ok.ru/profile/910150164494')"><i class="fab fa-odnoklassniki" style="color:#ed812b"></i> OK.ru</button>
         </div>
     </div>
 
