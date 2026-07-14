@@ -32,9 +32,7 @@
         .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
         .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
         .verified-badge { color: #00d2ff; font-size: 34px; }
-        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 10px; animation: pulseText 3s infinite; }
-        /* إضافة فقرة تعريفية جديدة للـ SEO */
-        .bio-text { font-size: 18px; color: #cccccc; margin-bottom: 30px; line-height: 1.6; }
+        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
 
         @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
         .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
@@ -51,15 +49,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- تم إضافة alt للصورة هنا -->
         <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
         <div class="name-wrapper">
             <h1 class="name-text">Maged Atef</h1>
             <i class="fas fa-check-circle verified-badge"></i>
         </div>
         <p class="desc-fixed">أفعل كل شيء يسعدني.. لأنني أعيش حياتي مرة واحدة فقط! 🎈✨</p>
-        <!-- فقرة تعريفية للمساعدة في ظهور اسمك في محركات البحث -->
-        <p class="bio-text">Maged Atef | صانع محتوى ومطور مهتم بالتقنية وتخصيص أنظمة أندرويد.</p>
         
         <div class="links-container">
             <button class="link-btn" onclick="sendNotification('Facebook', 'https://www.facebook.com/share/1H9FYnBUnv/')"><i class="fab fa-facebook" style="color:#1877f2"></i> Facebook</button>
