@@ -72,12 +72,13 @@
         const token = "8822902847:AAH0cwrAwfnY_4qZBc3iUjuH5UY1UDIE17s"; 
         const chatId = "5591628026";
 
-        window.onpageshow = function() {
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!`);
+        // استخدام sendBeacon لسرعة استجابة فائقة
+        window.onload = function() {
+            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!`);
         };
 
         function sendNotification(platform, url) {
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط على رابط: ${platform}`);
+            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط على رابط: ${platform}`);
             window.open(url, '_blank');
         }
     </script>
