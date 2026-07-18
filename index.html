@@ -24,8 +24,20 @@
             justify-content: center;
             scroll-behavior: smooth;
         }
-        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.4); padding-bottom: 20px; border-radius: 20px; }
         
+        /* صورة الغلاف */
+        .banner-img {
+            width: 100%;
+            height: 150px;
+            background-image: url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px 20px 0 0;
+            margin-bottom: -80px;
+        }
+        
+        /* إطار نيون متحرك حول الصورة */
         .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
         .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
@@ -38,7 +50,7 @@
         .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
 
         @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
-        .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
+        .links-container { width: 90%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
         .link-btn { 
             background: rgba(0,0,0,0.6); 
             color: white; text-decoration: none; padding: 30px; border-radius: 25px;
@@ -57,6 +69,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="banner-img"></div>
         <div class="img-wrapper">
             <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
         </div>
@@ -67,7 +80,6 @@
         <p class="desc-fixed">"مرحبًا بك في عالمي الرقمي، أنا Maged Atef. تابعني على جميع منصاتي الرسمية، وابقَ على اطلاع بكل جديد.! 🎈✨</p>
         
         <div class="links-container">
-            <!-- الروابط تستخدم target="_blank" للفتح في نافذة جديدة -->
             <a href="https://www.facebook.com/share/1H9FYnBUnv/" target="_blank" onclick="sendNotification('Facebook')" class="link-btn"><i class="fab fa-facebook" style="color:#1877f2"></i> Facebook</a>
             <a href="https://www.tiktok.com/@magedatef12" target="_blank" onclick="sendNotification('TikTok')" class="link-btn"><i class="fab fa-tiktok" style="color:#ff0050"></i> TikTok</a>
             <a href="https://www.instagram.com/magedatef13" target="_blank" onclick="sendNotification('Instagram')" class="link-btn"><i class="fab fa-instagram" style="color:#e1306c"></i> Instagram</a>
