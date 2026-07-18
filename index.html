@@ -24,21 +24,39 @@
             justify-content: center;
             scroll-behavior: smooth;
         }
-        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.4); padding-bottom: 20px; border-radius: 20px; }
+        .container { 
+            max-width: 600px; 
+            width: 100%; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            background: rgba(0,0,0,0.6); 
+            padding-bottom: 30px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+        }
         
         /* صورة الغلاف */
         .banner-img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             background-image: url('banner.jpg');
             background-size: cover;
             background-position: center;
-            border-radius: 20px 20px 0 0;
-            margin-bottom: -80px;
+            margin-bottom: -70px;
         }
         
         /* إطار نيون متحرك حول الصورة */
-        .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
+        .img-wrapper { 
+            position: relative; 
+            z-index: 10; 
+            width: 180px; 
+            height: 180px; 
+            margin-bottom: 20px; 
+            background: #1a1a1a; 
+            border-radius: 50%; 
+            padding: 5px;
+        }
         .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         .img-wrapper::after { content: ''; position: absolute; top: -5px; left: -5px; width: 180px; height: 180px; border-radius: 50%; border: 5px solid transparent; border-top: 5px solid #00d2ff; border-bottom: 5px solid #00d2ff; animation: rotate 2s linear infinite; }
@@ -47,7 +65,7 @@
         .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
         .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
         .verified-badge { color: #00d2ff; font-size: 34px; }
-        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
+        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin: 0 15px 40px 15px; animation: pulseText 3s infinite; }
 
         @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
         .links-container { width: 90%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
