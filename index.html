@@ -50,11 +50,12 @@
         .link-btn:hover { background: rgba(0,210,255,0.2); }
         .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
         
-        /* زر المشاركة */
-        .share-btn { margin-top: 40px; background: #00d2ff; color: #000; padding: 15px 40px; border-radius: 30px; font-size: 22px; font-weight: bold; border: none; cursor: pointer; }
+        /* زر المشاركة المتحرك */
+        @keyframes pulseBtn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .share-btn { margin-top: 40px; background: #00d2ff; color: #000; padding: 20px 50px; border-radius: 30px; font-size: 24px; font-weight: bold; border: none; cursor: pointer; animation: pulseBtn 1.5s infinite; }
         
-        /* الحقوق */
-        .footer-text { margin-top: 40px; font-size: 14px; color: #aaa; }
+        /* الحقوق بشكل أكبر */
+        .footer-text { margin-top: 50px; font-size: 16px; color: #fff; line-height: 1.6; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -81,19 +82,20 @@
         
         <button class="share-btn" onclick="navigator.share({title: 'Maged Atef', url: window.location.href})">مشاركة الموقع 🔗</button>
         
-        <p class="footer-text">© 2026 Maged Atef | All Rights Reserved هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.</p>
+        <p class="footer-text">© 2026 Maged Atef | All Rights Reserved<br>هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.</p>
     </div>
 
     <script>
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
 
+        // استخدام fetch لضمان عمل البوت
         window.onload = function() {
-            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!`);
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!`);
         };
 
         function sendNotification(platform, url) {
-            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط على رابط: ${platform}`);
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط على رابط: ${platform}`);
             window.open(url, '_blank');
         }
     </script>
