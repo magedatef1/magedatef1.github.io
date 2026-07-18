@@ -67,7 +67,6 @@
         <p class="desc-fixed">"مرحبًا بك في عالمي الرقمي، أنا Maged Atef. تابعني على جميع منصاتي الرسمية، وابقَ على اطلاع بكل جديد.! 🎈✨</p>
         
         <div class="links-container">
-            <!-- الروابط تستخدم target="_blank" للفتح في نافذة جديدة -->
             <a href="https://www.facebook.com/share/1H9FYnBUnv/" target="_blank" onclick="sendNotification('Facebook')" class="link-btn"><i class="fab fa-facebook" style="color:#1877f2"></i> Facebook</a>
             <a href="https://www.tiktok.com/@magedatef12" target="_blank" onclick="sendNotification('TikTok')" class="link-btn"><i class="fab fa-tiktok" style="color:#ff0050"></i> TikTok</a>
             <a href="https://www.instagram.com/magedatef13" target="_blank" onclick="sendNotification('Instagram')" class="link-btn"><i class="fab fa-instagram" style="color:#e1306c"></i> Instagram</a>
@@ -84,6 +83,9 @@
     </div>
 
     <script>
+        // كود تحديد لغة الزائر تلقائياً
+        document.documentElement.lang = navigator.language || navigator.userLanguage;
+
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
 
