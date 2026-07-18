@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- كود التحقق من ملكية الموقع لجوجل -->
     <meta name="google-site-verification" content="oJI0U1gza_KbKarALbyq9sRtRxdPTf6PDg5xZu4Vh4k" />
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -13,7 +12,8 @@
             background-color: #1a1a1a; 
             background-size: cover; 
             background-position: center; 
-            background-attachment: fixed; 
+            background-attachment: scroll; 
+            background-repeat: no-repeat;
             color: white; 
             text-align: center; 
             font-family: sans-serif; 
@@ -23,48 +23,39 @@
             display: flex; 
             flex-direction: column;
             align-items: center; 
-            justify-content: center;
-            scroll-behavior: smooth;
         }
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* إطار نيون متحرك */
-        @keyframes rotate { 100% { filter: hue-rotate(360deg); } }
-        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; margin-bottom: 20px; animation: rotate 3s linear infinite; box-shadow: 0 0 15px #00d2ff; }
+        /* إطار نيون ثابت ومتحرك حول الصورة */
+        .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid #fff; }
+        @keyframes neon { 0%, 100% { border-color: #00d2ff; box-shadow: 0 0 15px #00d2ff; } 50% { border-color: #ff0050; box-shadow: 0 0 15px #ff0050; } }
+        .img-wrapper::after { content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50%; border: 4px solid transparent; animation: neon 2s infinite; }
         
         @keyframes pulseText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
+        .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; }
         .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
         .verified-badge { color: #00d2ff; font-size: 34px; }
-        .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
+        .desc-fixed { font-size: 20px; color: #ffcc00; margin-bottom: 30px; }
 
-        @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
-        .links-container { width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
-        .link-btn { 
-            background: rgba(0,0,0,0.6); 
-            color: white; text-decoration: none; padding: 30px; border-radius: 25px;
-            font-size: 28px; font-weight: bold; border: 2px solid #00d2ff;
-            display: flex; align-items: center; justify-content: center; gap: 25px;
-            transition: 0.3s; cursor: pointer;
-        }
-        .link-btn:hover { background: rgba(0,210,255,0.2); }
-        .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
+        .links-container { width: 100%; display: grid; gap: 15px; }
+        .link-btn { background: rgba(0,0,0,0.7); color: white; text-decoration: none; padding: 20px; border-radius: 20px; font-size: 24px; font-weight: bold; border: 2px solid #00d2ff; display: flex; align-items: center; justify-content: center; gap: 15px; transition: 0.3s; cursor: pointer; }
+        .link-btn:hover { background: rgba(0,210,255,0.3); }
         
-        /* زر مشاركة */
-        .share-btn { margin-top: 30px; padding: 15px 30px; font-size: 20px; border-radius: 50px; background: #00d2ff; border: none; cursor: pointer; color: #000; font-weight: bold; }
-        
-        /* التذييل */
-        footer { margin-top: 50px; font-size: 14px; color: #888; padding-bottom: 20px; }
+        .share-btn { margin: 30px 0; padding: 15px 30px; font-size: 20px; border-radius: 50px; background: #00d2ff; border: none; cursor: pointer; color: #000; font-weight: bold; }
+        footer { font-size: 12px; color: #888; padding: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
+        <div class="img-wrapper">
+            <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef">
+        </div>
         <div class="name-wrapper">
             <h1 class="name-text">Maged Atef</h1>
             <i class="fas fa-check-circle verified-badge"></i>
         </div>
-        <p class="desc-fixed">"مرحبًا بك في عالمي الرقمي، أنا Maged Atef. تابعني على جميع منصاتي الرسمية، وابقَ على اطلاع بكل جديد.! 🎈✨</p>
+        <p class="desc-fixed">مرحبًا بك في عالمي الرقمي، تابعني على جميع منصاتي الرسمية! 🎈✨</p>
         
         <div class="links-container">
             <button class="link-btn" onclick="sendNotification('Facebook', 'https://www.facebook.com/share/1H9FYnBUnv/')"><i class="fab fa-facebook" style="color:#1877f2"></i> Facebook</button>
@@ -73,29 +64,24 @@
             <button class="link-btn" onclick="sendNotification('Twitter', 'https://twitter.com/magedatef23')"><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</button>
             <button class="link-btn" onclick="sendNotification('Snapchat', 'https://www.snapchat.com/add/magedatef11')"><i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat</button>
             <button class="link-btn" onclick="sendNotification('Telegram', 'https://t.me/MagedAtef1')"><i class="fab fa-telegram" style="color:#0088cc"></i> Telegram</button>
-            <button class="link-btn" onclick="sendNotification('VK', 'https://vk.com/magedatef')"><i class="fab fa-vk" style="color:#4c75a3"></i> VK</button>
-            <button class="link-btn" onclick="sendNotification('OK.ru', 'https://ok.ru/profile/910150164494')"><i class="fab fa-odnoklassniki" style="color:#ed812b"></i> OK.ru</button>
         </div>
 
-        <button class="share-btn" onclick="navigator.share({title: document.title, url: window.location.href})">مشاركة الموقع 🔗</button>
+        <button class="share-btn" onclick="navigator.share({title: 'Maged Atef', url: window.location.href})">مشاركة الموقع 🔗</button>
+        <footer>© 2026 Maged Atef | All Rights Reserved</footer>
     </div>
-
-    <footer>
-        © 2026 Maged Atef | All Rights Reserved هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.
-    </footer>
 
     <script>
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
 
-        window.onload = function() {
-            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل إلى صفحتك الرئيسية الآن!`);
-        };
-
         function sendNotification(platform, url) {
-            navigator.sendBeacon(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط على رابط: ${platform}`);
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 ضغطة على: ${platform}`);
             window.open(url, '_blank');
         }
+
+        window.onload = () => {
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
+        };
     </script>
 </body>
 </html>
