@@ -7,19 +7,21 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- كود الترجمة الخفي -->
+    <!-- كود الترجمة -->
+    <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar', includedLanguages: 'en,fr,es,ru,sq,de,it,tr,pt,hi,zh-CN,ja,ko'}, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'ar', autoDisplay: false}, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <style>
-        /* إخفاء شريط الترجمة تماماً */
-        #google_translate_element { display: none !important; }
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
+        /* إخفاء شريط ترجمة جوجل بشكل نهائي */
+        #google_translate_element, .goog-te-banner-frame, .goog-te-menu-frame, #goog-gt-tt, .skiptranslate, iframe.goog-te-banner-frame {
+            display: none !important;
+        }
+        body { top: 0px !important; position: static !important; }
 
         body { 
             background-image: url('background.jpg');
@@ -70,8 +72,6 @@
     </style>
 </head>
 <body>
-    <div id="google_translate_element"></div>
-
     <div class="container">
         <div class="img-wrapper">
             <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
@@ -105,15 +105,15 @@
         window.onload = function() {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
             
-            // تفعيل الترجمة التلقائية بناءً على لغة المتصفح
+            // الترجمة التلقائية
             setTimeout(function() {
-                var lang = navigator.language.split('-')[0];
                 var select = document.querySelector('select.goog-te-combo');
                 if (select) {
+                    var lang = navigator.language.split('-')[0];
                     select.value = lang;
                     select.dispatchEvent(new Event('change'));
                 }
-            }, 1500);
+            }, 1000);
         };
 
         function sendNotification(platform) {
