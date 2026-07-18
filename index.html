@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        /* إخفاء تام لأي عناصر تخص الترجمة */
-        .goog-te-banner-frame, .goog-te-menu-frame, #goog-gt-tt, .skiptranslate, iframe.goog-te-banner-frame, .goog-te-gadget-simple {
-            display: none !important;
-        }
-        body { top: 0px !important; position: static !important; min-height: 100vh !important; }
-
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         body { 
@@ -25,49 +19,31 @@
             font-family: sans-serif; 
             margin: 0; 
             padding: 20px; 
+            min-height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center;
             animation: fadeIn 0.8s ease-in;
-            /* لمنع الاهتزاز والتشويش */
-            will-change: transform;
         }
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* تحسينات لمنع الوميض والاهتزاز */
-        .img-wrapper { 
-            position: relative; 
-            width: 180px; 
-            height: 180px; 
-            margin-bottom: 20px; 
-            flex-shrink: 0; 
-            will-change: transform;
-        }
-        .profile-img { 
-            width: 170px; 
-            height: 170px; 
-            border-radius: 50%; 
-            border: 5px solid #00d2ff; 
-            object-fit: cover; 
-            background-color: #1a1a1a; 
-            display: block;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
+        .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; object-fit: cover; background-color: #333; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         .img-wrapper::after { content: ''; position: absolute; top: -5px; left: -5px; width: 180px; height: 180px; border-radius: 50%; border: 5px solid transparent; border-top: 5px solid #00d2ff; border-bottom: 5px solid #00d2ff; animation: rotate 2s linear infinite; }
         
-        .name-wrapper, .desc-fixed { will-change: transform; }
         @keyframes pulseText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
         .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
         .verified-badge { color: #00d2ff; font-size: 34px; }
         .desc-fixed { font-size: 24px; font-weight: bold; color: #ffcc00; margin-bottom: 40px; animation: pulseText 3s infinite; }
 
+        @keyframes bounceIcon { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
         .links-container { width: 100%; display: grid; gap: 20px; }
         .link-btn { background: rgba(0,0,0,0.6); color: white; text-decoration: none; padding: 30px; border-radius: 25px; font-size: 28px; font-weight: bold; border: 2px solid #00d2ff; display: flex; align-items: center; justify-content: center; gap: 25px; transition: 0.3s; cursor: pointer; }
         .link-btn:hover { background: rgba(0,210,255,0.2); }
-        .link-btn i { font-size: 42px; }
+        /* هنا تم إعادة الحركة للأيقونات */
+        .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
         
         @keyframes pulseBtn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .share-btn { margin-top: 40px; background: #00d2ff; color: #000; padding: 20px 50px; border-radius: 30px; font-size: 24px; font-weight: bold; border: none; cursor: pointer; animation: pulseBtn 1.5s infinite; }
@@ -76,8 +52,6 @@
     </style>
 </head>
 <body>
-    <div id="google_translate_element" style="display:none;"></div>
-
     <div class="container">
         <div class="img-wrapper">
             <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef">
@@ -104,31 +78,12 @@
         <p class="footer-text">© 2026 Maged Atef هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.</p>
     </div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar', autoDisplay: false}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     <script>
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
 
         window.onload = function() {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
-            
-            // الترجمة التلقائية مؤجلة لضمان عدم حدوث تشويش عند تحميل الصفحة
-            setTimeout(function() {
-                var select = document.querySelector('select.goog-te-combo');
-                if (select) {
-                    var userLang = navigator.language.split('-')[0];
-                    if (userLang !== 'ar') {
-                        select.value = userLang;
-                        select.dispatchEvent(new Event('change'));
-                    }
-                }
-            }, 2000); 
         };
 
         function sendNotification(platform) {
