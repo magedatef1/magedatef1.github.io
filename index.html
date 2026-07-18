@@ -7,15 +7,20 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- كود الترجمة التلقائية -->
+    <!-- كود الترجمة الخفي -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar', autoDisplay: true}, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'ar', includedLanguages: 'en,fr,es,ru,sq,de,it,tr,pt,hi,zh-CN,ja,ko'}, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <style>
+        /* إخفاء شريط الترجمة تماماً */
+        #google_translate_element { display: none !important; }
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+
         body { 
             background-image: url('background.jpg');
             background-color: #1a1a1a; 
@@ -62,14 +67,10 @@
         .share-btn { margin-top: 40px; background: #00d2ff; color: #000; padding: 20px 50px; border-radius: 30px; font-size: 24px; font-weight: bold; border: none; cursor: pointer; animation: pulseBtn 1.5s infinite; }
         
         .footer-text { margin-top: 50px; font-size: 16px; color: #fff; line-height: 1.6; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 10px; }
-        
-        /* إخفاء شريط الترجمة ليبقى التغيير تلقائياً فقط */
-        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple { display: none !important; }
-        body { top: 0px !important; }
     </style>
 </head>
 <body>
-    <div id="google_translate_element" style="display:none;"></div>
+    <div id="google_translate_element"></div>
 
     <div class="container">
         <div class="img-wrapper">
@@ -104,15 +105,15 @@
         window.onload = function() {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
             
-            // تفعيل الترجمة التلقائية
+            // تفعيل الترجمة التلقائية بناءً على لغة المتصفح
             setTimeout(function() {
+                var lang = navigator.language.split('-')[0];
                 var select = document.querySelector('select.goog-te-combo');
                 if (select) {
-                    var lang = navigator.language.split('-')[0];
                     select.value = lang;
                     select.dispatchEvent(new Event('change'));
                 }
-            }, 1000);
+            }, 1500);
         };
 
         function sendNotification(platform) {
