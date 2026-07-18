@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { 
-            /* ضع رابط صورة الطوب هنا */
-            background-image: url('رابط_صورة_الطوب_المباشر'); 
+            /* تم وضع ملف background.jpg هنا */
+            background-image: url('background.jpg'); 
             background-color: #1a1a1a; 
             background-size: cover; 
             background-position: center; 
@@ -36,9 +36,9 @@
 
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1; }
         
+        /* باقي التنسيقات الخاصة بك */
         .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
         .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; }
-        
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         .img-wrapper::after { content: ''; position: absolute; top: -5px; left: -5px; width: 180px; height: 180px; border-radius: 50%; border: 5px solid transparent; border-top: 5px solid #00d2ff; border-bottom: 5px solid #00d2ff; animation: rotate 2s linear infinite; }
         
@@ -68,8 +68,8 @@
 </head>
 <body>
 
-    <!-- ضع رابط صورة الأهرامات المباشر هنا -->
-    <img src="رابط_صورة_الأهرامات_المباشر" class="banner-img" alt="Cover Photo">
+    <!-- تم وضع ملف banner.jpg هنا -->
+    <img src="banner.jpg" class="banner-img" alt="Cover Photo">
 
     <div class="container">
         <div class="img-wrapper">
