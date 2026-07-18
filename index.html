@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="oJI0U1gza_KbKarALbyq9sRtRxdPTf6PDg5xZu4Vh4k" />
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body { 
+            /* ضع رابط صورة الطوب هنا */
+            background-image: url('رابط_صورة_الطوب_المباشر'); 
             background-color: #1a1a1a; 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
             color: white; 
             text-align: center; 
             font-family: sans-serif; 
             margin: 0; 
-            padding: 20px; 
-            padding-top: 220px; /* مساحة لصورة الغلاف */
+            padding-top: 220px; 
             min-height: 100vh; 
             display: flex; 
             flex-direction: column;
             align-items: center;
-            scroll-behavior: smooth;
         }
         
-        /* تنسيق صورة الغلاف */
         .banner-img {
             position: absolute;
             top: 0;
@@ -30,13 +31,14 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            z-index: -1;
+            z-index: 0;
         }
 
-        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1; }
         
         .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
         .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; }
+        
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         .img-wrapper::after { content: ''; position: absolute; top: -5px; left: -5px; width: 180px; height: 180px; border-radius: 50%; border: 5px solid transparent; border-top: 5px solid #00d2ff; border-bottom: 5px solid #00d2ff; animation: rotate 2s linear infinite; }
         
@@ -66,8 +68,8 @@
 </head>
 <body>
 
-    <!-- ضع رابط صورة الغلاف هنا في src -->
-    <img src="banner.jpg" class="banner-img" alt="Cover Photo">
+    <!-- ضع رابط صورة الأهرامات المباشر هنا -->
+    <img src="رابط_صورة_الأهرامات_المباشر" class="banner-img" alt="Cover Photo">
 
     <div class="container">
         <div class="img-wrapper">
