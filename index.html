@@ -7,8 +7,8 @@
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* إخفاء أي عناصر تحكم خاصة بأداة الترجمة */
-        .gtranslate_wrapper, .gt_float_switcher { display: none !important; }
+        /* إخفاء تام لأي عناصر تحكم تظهر من أداة الترجمة */
+        .gtranslate_wrapper, .gt_float_switcher, .goog-te-banner-frame { display: none !important; }
 
         body { 
             background-image: url('background.jpg');
@@ -29,7 +29,6 @@
         }
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* حل مشكلة اهتزاز الصور */
         .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
         .profile-img { 
             width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff;
@@ -63,7 +62,6 @@
 </head>
 <body>
 
-    <!-- حاوية الترجمة -->
     <div class="gtranslate_wrapper"></div>
 
     <div class="container">
@@ -92,26 +90,24 @@
         <p class="footer-text">© 2026 Maged Atef هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.</p>
     </div>
 
-    <!-- كود الترجمة التلقائي -->
+    <!-- إعدادات الترجمة لجميع لغات العالم -->
     <script>
         window.gtranslateSettings = {
             "default_language": "ar",
             "detect_browser_language": true,
             "wrapper_selector": ".gtranslate_wrapper",
-            "flag_style": "none"
+            "flag_style": "none",
+            "languages": ["af","sq","am","ar","hy","az","eu","be","bn","bs","bg","ca","ceb","ny","zh-CN","zh-TW","co","hr","cs","da","nl","en","eo","et","tl","fi","fr","fy","gl","ka","de","el","gu","ht","ha","haw","iw","hi","hmn","hu","is","ig","id","ga","it","ja","jw","kn","kk","km","ko","ku","ky","lo","la","lv","lt","lb","mk","mg","ms","ml","mt","mi","mr","mn","my","ne","no","ps","fa","pl","pt","pa","ro","ru","sm","gd","sr","st","sn","sd","si","sk","sl","so","es","su","sw","sv","tg","ta","te","th","tr","uk","ur","uz","vi","cy","xh","yi","yo","zu"]
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    <!-- كود التيليجرام -->
     <script>
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
-
         window.onload = function() {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
         };
-
         function sendNotification(platform) {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 نقرة على: ${platform}`);
         }
