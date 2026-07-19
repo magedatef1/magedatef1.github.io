@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="oJI0U1gza_KbKarALbyq9sRtRxdPTf6PDg5xZu4Vh4k" />
     <title>Maged Atef</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* أنيميشن دخول الصفحة */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* إضافة أنيميشن ظهور لطيف عند الدخول */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
         body { 
             background-image: url('background.jpg');
             background-color: #1a1a1a; 
             background-size: cover; 
             background-position: center; 
-            background-attachment: fixed; 
+            background-attachment: scroll; 
             color: white; 
             text-align: center; 
             font-family: sans-serif; 
@@ -27,27 +25,24 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            animation: slideUp 1.2s ease-out;
+            scroll-behavior: smooth;
+            animation: fadeIn 1.5s ease-in;
         }
-
         .container { max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* إطار الصورة الشخصية (متحرك ومتطابق) */
+        /* إطار الصورة كما طلبت بالضبط */
         .img-wrapper { position: relative; width: 180px; height: 180px; margin-bottom: 20px; }
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 5px solid #00d2ff; }
         
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         
-        .profile-img { 
-            width: 170px; 
-            height: 170px; 
-            border-radius: 50%; 
-            border: 5px solid transparent;
-            border-top: 5px solid #00d2ff;
-            border-bottom: 5px solid #00d2ff;
-            animation: rotate 3s linear infinite;
+        .img-wrapper::after { 
+            content: ''; position: absolute; top: -5px; left: -5px; width: 180px; height: 180px; 
+            border-radius: 50%; border: 5px solid transparent; border-top: 5px solid #00d2ff; border-bottom: 5px solid #00d2ff; 
+            animation: rotate 2s linear infinite;
+            will-change: transform; /* هذا ينهي مشكلة التشويش والاهتزاز أثناء الدوران */
         }
-
-        /* تنسيقات النصوص والأزرار */
+        
         @keyframes pulseText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .name-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; animation: pulseText 3s infinite; }
         .name-text { font-size: 44px; font-weight: bold; color: #fff; margin: 0; }
@@ -75,7 +70,7 @@
 <body>
     <div class="container">
         <div class="img-wrapper">
-            <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef">
+            <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
         </div>
         <div class="name-wrapper">
             <h1 class="name-text">Maged Atef</h1>
@@ -102,9 +97,11 @@
     <script>
         const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
         const chatId = "5591628026";
+
         window.onload = function() {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`);
         };
+
         function sendNotification(platform) {
             fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 نقرة على: ${platform}`);
         }
