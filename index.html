@@ -10,12 +10,30 @@
         /* إضافة أنيميشن ظهور لطيف عند الدخول */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
+        /* تنسيق فيديو الخلفية المتحركة */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        /* طبقة تعتيم خفيفة فوق الفيديو لضمان وضوح النصوص والكروت */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
+        
         body { 
-            background-image: url('background.jpg');
             background-color: #1a1a1a; 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: scroll; 
             color: white; 
             text-align: center; 
             font-family: sans-serif; 
@@ -73,6 +91,13 @@
     </style>
 </head>
 <body>
+    <!-- عناصر الخلفية المتحركة -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="background.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو
+    </video>
+    <div class="video-overlay"></div>
+
     <div class="container">
         <div class="img-wrapper">
             <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo">
@@ -90,6 +115,7 @@
             <a href="https://twitter.com/magedatef23" target="_blank" onclick="sendNotification('Twitter')" class="link-btn"><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</a>
             <a href="https://www.snapchat.com/add/magedatef11" target="_blank" onclick="sendNotification('Snapchat')" class="link-btn"><i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat</a>
             <a href="https://t.me/MagedAtef1" target="_blank" onclick="sendNotification('Telegram')" class="link-btn"><i class="fab fa-telegram" style="color:#0088cc"></i> Telegram</a>
+            <a href="https://k.kwai.com/u/@magedatef33/lBARZPCK" target="_blank" onclick="sendNotification('Kwai')" class="link-btn"><i class="fas fa-video" style="color:#ff5722"></i> Kwai</a>
             <a href="https://vk.com/magedatef" target="_blank" onclick="sendNotification('VK')" class="link-btn"><i class="fab fa-vk" style="color:#4c75a3"></i> VK</a>
             <a href="https://ok.ru/profile/910150164494" target="_blank" onclick="sendNotification('OK.ru')" class="link-btn"><i class="fab fa-odnoklassniki" style="color:#ed812b"></i> OK.ru</a>
         </div>
