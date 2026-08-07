@@ -21,7 +21,7 @@
             object-fit: cover;
         }
 
-        /* طبقة تعتيم خفيفة فوق الفيديو لضمان وضوح النصوص والكروت */
+        /* طبقة تعتيم خفيفة جدا فوق الفيديو لضمان وضوح النصوص والكروت */
         .video-overlay {
             position: fixed;
             top: 0;
@@ -82,7 +82,7 @@
             transition: 0.3s; cursor: pointer;
         }
         .link-btn:hover { background: rgba(0,210,255,0.2); }
-        .link-btn i { font-size: 42px; animation: bounceIcon 2s infinite; }
+        .link-btn i, .link-btn img.custom-icon { font-size: 42px; width: 42px; height: 42px; object-fit: contain; animation: bounceIcon 2s infinite; }
         
         @keyframes pulseBtn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .share-btn { margin-top: 40px; background: #00d2ff; color: #000; padding: 20px 50px; border-radius: 30px; font-size: 24px; font-weight: bold; border: none; cursor: pointer; animation: pulseBtn 1.5s infinite; }
@@ -113,7 +113,7 @@
             <a href="https://www.instagram.com/magedatef14" target="_blank" onclick="sendNotification('Instagram')" class="link-btn"><i class="fab fa-instagram" style="color:#e1306c"></i> Instagram</a>
             <a href="https://twitter.com/magedatef23" target="_blank" onclick="sendNotification('Twitter')" class="link-btn"><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</a>
             <a href="https://www.snapchat.com/add/magedatef11" target="_blank" onclick="sendNotification('Snapchat')" class="link-btn"><i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat</a>
-            <a href="https://upscrolled.com/@magedatef" target="_blank" onclick="sendNotification('Upscrolled')" class="link-btn"><i class="fas fa-globe" style="color:#00d2ff"></i> upscrolled</a>
+            <a href="https://upscrolled.com/@magedatef" target="_blank" onclick="sendNotification('Upscrolled')" class="link-btn"><img src="https://play-lh.googleusercontent.com/wP0c5lF0y_S8C9JqWq7ZlW3sQ6lV2mK6hQ9tJz9k8XW8z2J8w7V8wQ6z8k8z9k8=w240-h480-rw" class="custom-icon" style="border-radius: 10px;" alt="Upscrolled"> upscrolled</a>
             <a href="https://mastodon.social/@magedatef" target="_blank" onclick="sendNotification('Mastodon')" class="link-btn"><i class="fab fa-mastodon" style="color:#6364ff"></i> mastodon</a>
             <a href="https://www.linkedin.com/in/maged-atef-325037282" target="_blank" onclick="sendNotification('Linkedin')" class="link-btn"><i class="fab fa-linkedin" style="color:#0a66c2"></i> Linkedin</a>
             <a href="https://t.me/MagedAtef1" target="_blank" onclick="sendNotification('Telegram')" class="link-btn"><i class="fab fa-telegram" style="color:#0088cc"></i> Telegram</a>
