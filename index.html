@@ -1,333 +1,398 @@
-<!DOCTYPE html> 
-<html lang="ar" dir="rtl"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<meta name="google-site-verification" content="oJI0U1gza_KbKarALbyq9sRtRxdPTf6PDg5xZu4Vh4k" /> 
-<title>Maged Atef</title> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
-<style> 
-/* أنيميشن الظهور عند الدخول */ 
-@keyframes fadeIn { 
-    from { opacity: 0; } 
-    to { opacity: 1; } 
-} 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="oJI0U1gza_KbKarALbyq9sRtRxdPTf6PDg5xZu4Vh4k" />
+    <title>Maged Atef</title>
 
-/* تنسيق فيديو الخلفية */ 
-#bg-video { 
-    position: fixed; 
-    right: 0; 
-    bottom: 0; 
-    min-width: 100%; 
-    min-height: 100%; 
-    z-index: -2; 
-    object-fit: cover; 
-} 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-/* طبقة التعتيم */ 
-.video-overlay { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: rgba(0, 0, 0, 0.65); 
-    z-index: -1; 
-} 
+    <style>
+        /* أنيميشن الظهور عند الدخول */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-body { 
-    background-color: #1a1a1a; 
-    color: white; 
-    text-align: center; 
-    font-family: sans-serif; 
-    margin: 0; 
-    padding: 20px; 
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    scroll-behavior: smooth; 
-    animation: fadeIn 1.5s ease-in; 
-} 
+        /* تنسيق فيديو الخلفية */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+            object-fit: cover;
+        }
 
-.container { 
-    max-width: 600px; 
-    width: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-} 
+        /* طبقة التعتيم */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
 
-/* صورة البروفايل */ 
-.img-wrapper { 
-    width: 180px; 
-    height: 180px; 
-    margin-bottom: 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-} 
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-behavior: smooth;
+            animation: fadeIn 1.5s ease-in;
+        }
 
-.profile-img { 
-    width: 170px; 
-    height: 170px; 
-    border-radius: 50%; 
-    border: 4px solid #fff; 
-    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff; 
-} 
+        .container {
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* الاسم */ 
-@keyframes pulseText { 
-    0%, 100% { transform: scale(1); } 
-    50% { transform: scale(1.05); } 
-} 
+        /* صورة البروفايل */
+        .img-wrapper {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.name-wrapper { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-    margin: 15px 0; 
-    animation: pulseText 3s infinite; 
-} 
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid #fff;
 
-.name-text { 
-    font-size: 44px; 
-    font-weight: bold; 
-    color: #fff; 
-    margin: 0; 
-} 
+            box-shadow:
+                0 0 10px #00d2ff,
+                0 0 20px #00d2ff,
+                0 0 40px #00d2ff;
+        }
 
-.verified-badge { 
-    color: #00d2ff; 
-    font-size: 34px; 
-} 
+        /* الاسم */
+        @keyframes pulseText {
+            0%, 100% {
+                transform: scale(1);
+            }
 
-/* الوصف */ 
-.desc-fixed { 
-    font-size: 24px; 
-    font-weight: bold; 
-    color: #ffcc00; 
-    margin-bottom: 40px; 
-    animation: pulseText 3s infinite; 
-} 
+            50% {
+                transform: scale(1.05);
+            }
+        }
 
-/* حركة الأيقونات */ 
-@keyframes bounceIcon { 
-    0%, 100% { transform: translateX(0); } 
-    50% { transform: translateX(-10px); } 
-} 
+        .name-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            animation: pulseText 3s infinite;
+        }
 
-/* الروابط */ 
-.links-container { 
-    width: 100%; 
-    display: grid; 
-    grid-template-columns: repeat(1, 1fr); 
-    gap: 20px; 
-} 
+        .name-text {
+            font-size: 44px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
 
-.link-btn { 
-    background: rgba(0,0,0,0.6); 
-    color: white; 
-    text-decoration: none; 
-    padding: 30px; 
-    border-radius: 25px; 
-    font-size: 28px; 
-    font-weight: bold; 
-    border: 2px solid #00d2ff; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 25px; 
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-    cursor: pointer; 
-    position: relative;
-    overflow: hidden;
-} 
+        .verified-badge {
+            color: #00d2ff;
+            font-size: 34px;
+        }
 
-.link-btn:hover { 
-    background: rgba(0,210,255,0.2); 
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-} 
+        /* الوصف */
+        .desc-fixed {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 40px;
+            animation: pulseText 3s infinite;
+        }
 
-/* تأثيرات خاصة عند الضغط للفيسبوك */
-.link-btn.facebook-btn:active {
-    background: rgba(24, 119, 242, 0.4) !important;
-    border-color: #1877f2 !important;
-    transform: scale(0.95) !important;
-    box-shadow: 0 0 25px #1877f2 !important;
-}
+        /* حركة الأيقونات */
+        @keyframes bounceIcon {
+            0%, 100% {
+                transform: translateX(0);
+            }
 
-/* تأثيرات خاصة عند الضغط للإنستجرام */
-.link-btn.instagram-btn:active {
-    background: rgba(225, 48, 108, 0.4) !important;
-    border-color: #e1306c !important;
-    transform: scale(0.95) !important;
-    box-shadow: 0 0 25px #e1306c !important;
-}
+            50% {
+                transform: translateX(-10px);
+            }
+        }
 
-.link-btn i { 
-    font-size: 42px; 
-    animation: bounceIcon 2s infinite; 
-    transition: transform 0.3s;
-} 
+        /* الروابط */
+        .links-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
 
-.link-btn:hover i {
-    transform: scale(1.2) rotate(5deg);
-}
+        .link-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-decoration: none;
+            padding: 30px;
+            border-radius: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            border: 2px solid #00d2ff;
 
-/* زر المشاركة */ 
-@keyframes pulseBtn { 
-    0%, 100% { transform: scale(1); } 
-    50% { transform: scale(1.05); } 
-} 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
 
-.share-btn { 
-    margin-top: 40px; 
-    background: #00d2ff; 
-    color: #000; 
-    padding: 20px 50px; 
-    border-radius: 30px; 
-    font-size: 24px; 
-    font-weight: bold; 
-    border: none; 
-    cursor: pointer; 
-    animation: pulseBtn 1.5s infinite; 
-    transition: 0.3s;
-} 
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-.share-btn:active {
-    transform: scale(0.92);
-}
+        .link-btn:hover {
+            background: rgba(0,210,255,0.2);
+        }
 
-/* الفوتر */ 
-.footer-text { 
-    margin-top: 50px; 
-    font-size: 16px; 
-    color: #fff; 
-    line-height: 1.6; 
-    padding: 10px; 
-    background: rgba(0,0,0,0.3); 
-    border-radius: 10px; 
-} 
-</style> 
-</head> 
-<body> 
+        .link-btn i {
+            font-size: 42px;
+            animation: bounceIcon 2s infinite;
+        }
 
-<!-- فيديو الخلفية --> 
-<video autoplay muted loop playsinline id="bg-video"> 
-    <source src="background.mp4" type="video/mp4"> 
-    متصفحك لا يدعم تشغيل الفيديو 
-</video> 
+        /* زر المشاركة */
+        @keyframes pulseBtn {
+            0%, 100% {
+                transform: scale(1);
+            }
 
-<div class="video-overlay"></div> 
+            50% {
+                transform: scale(1.05);
+            }
+        }
 
-<div class="container"> 
-    <!-- الصورة --> 
-    <div class="img-wrapper"> 
-        <img src="https://github.com/magedatef1.png" class="profile-img" alt="Maged Atef personal photo"> 
-    </div> 
+        .share-btn {
+            margin-top: 40px;
+            background: #00d2ff;
+            color: #000;
+            padding: 20px 50px;
+            border-radius: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            animation: pulseBtn 1.5s infinite;
+        }
 
-    <!-- الاسم --> 
-    <div class="name-wrapper"> 
-        <h1 class="name-text">Maged Atef</h1> 
-        <i class="fas fa-check-circle verified-badge"></i> 
-    </div> 
+        /* الفوتر */
+        .footer-text {
+            margin-top: 50px;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.6;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
 
-    <!-- الوصف --> 
-    <p class="desc-fixed"> 
-        "مرحبًا بك في عالمي الرقمي، أنا Maged Atef. تابعني على جميع منصاتي الرسمية، وابقَ على اطلاع بكل جديد.! 🎈✨ 
-    </p> 
+<body>
 
-    <!-- الروابط --> 
-    <div class="links-container"> 
-        <!-- 1 Facebook (تمت إضافة الكلاس الخاص بالتأثير الجمالي) --> 
-        <a href="https://www.facebook.com/share/1H9FYnBUnv/" target="_blank" onclick="sendNotification('Facebook')" class="link-btn facebook-btn"> 
-            <i class="fab fa-facebook" style="color:#1877f2"></i> Facebook 
-        </a> 
+    <!-- فيديو الخلفية -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="background.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو
+    </video>
 
-        <!-- 2 Instagram (تمت إضافة الكلاس الخاص بالتأثير الجمالي) --> 
-        <a href="https://www.instagram.com/magedatef14" target="_blank" onclick="sendNotification('Instagram')" class="link-btn instagram-btn"> 
-            <i class="fab fa-instagram" style="color:#e1306c"></i> Instagram 
-        </a> 
+    <div class="video-overlay"></div>
 
-        <!-- 3 Twitter --> 
-        <a href="https://twitter.com/magedatef23" target="_blank" onclick="sendNotification('Twitter')" class="link-btn"> 
-            <i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter 
-        </a> 
+    <div class="container">
 
-        <!-- 4 Snapchat --> 
-        <a href="https://www.snapchat.com/add/magedatef11" target="_blank" onclick="sendNotification('Snapchat')" class="link-btn"> 
-            <i class="fab fa-snapchat" style="color:#fffc00"></i> Snapchat 
-        </a> 
+        <!-- الصورة -->
+        <div class="img-wrapper">
+            <img
+                src="https://github.com/magedatef1.png"
+                class="profile-img"
+                alt="Maged Atef personal photo">
+        </div>
 
-        <!-- 5 LinkedIn --> 
-        <a href="https://www.linkedin.com/in/maged-atef-325037282?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" onclick="sendNotification('LinkedIn')" class="link-btn"> 
-            <i class="fab fa-linkedin" style="color:#0a66c2"></i> LinkedIn 
-        </a> 
+        <!-- الاسم -->
+        <div class="name-wrapper">
+            <h1 class="name-text">Maged Atef</h1>
+            <i class="fas fa-check-circle verified-badge"></i>
+        </div>
 
-        <!-- 6 Upscrolled --> 
-        <a href="https://upscrolled.com/@magedatef" target="_blank" onclick="sendNotification('Upscrolled')" class="link-btn"> 
-            <i class="fas fa-arrow-up" style="color:#00d2ff"></i> Upscrolled 
-        </a> 
+        <!-- الوصف -->
+        <p class="desc-fixed">
+            "مرحبًا بك في عالمي الرقمي، أنا Maged Atef. تابعني على جميع منصاتي الرسمية، وابقَ على اطلاع بكل جديد.! 🎈✨
+        </p>
 
-        <!-- 7 Mastodon --> 
-        <a href="https://mastodon.social/@magedatef" target="_blank" onclick="sendNotification('Mastodon')" class="link-btn"> 
-            <i class="fab fa-mastodon" style="color:#6364ff"></i> Mastodon 
-        </a> 
+        <!-- جميع الروابط بالترتيب الجديد -->
+        <div class="links-container">
 
-        <!-- 8 TikTok --> 
-        <a href="https://www.tiktok.com/@magedatef12" target="_blank" onclick="sendNotification('TikTok')" class="link-btn"> 
-            <i class="fab fa-tiktok" style="color:#ff0050"></i> TikTok 
-        </a> 
+            <!-- 1 Facebook -->
+            <a href="https://www.facebook.com/share/1H9FYnBUnv/"
+               target="_blank"
+               onclick="sendNotification('Facebook')"
+               class="link-btn">
+                <i class="fab fa-facebook" style="color:#1877f2"></i>
+                Facebook
+            </a>
 
-        <!-- 9 Kwai --> 
-        <a href="https://k.kwai.com/u/@magedatef33/lBARZPCK" target="_blank" onclick="sendNotification('Kwai')" class="link-btn"> 
-            <i class="fas fa-video" style="color:#ff5722"></i> Kwai 
-        </a> 
+            <!-- 2 Instagram -->
+            <a href="https://www.instagram.com/magedatef14"
+               target="_blank"
+               onclick="sendNotification('Instagram')"
+               class="link-btn">
+                <i class="fab fa-instagram" style="color:#e1306c"></i>
+                Instagram
+            </a>
 
-        <!-- 10 Telegram --> 
-        <a href="https://t.me/MagedAtef1" target="_blank" onclick="sendNotification('Telegram')" class="link-btn"> 
-            <i class="fab fa-telegram" style="color:#0088cc"></i> Telegram 
-        </a> 
+            <!-- 3 Twitter -->
+            <a href="https://twitter.com/magedatef23"
+               target="_blank"
+               onclick="sendNotification('Twitter')"
+               class="link-btn">
+                <i class="fab fa-twitter" style="color:#1da1f2"></i>
+                Twitter
+            </a>
 
-        <!-- 11 VK --> 
-        <a href="https://vk.com/magedatef" target="_blank" onclick="sendNotification('VK')" class="link-btn"> 
-            <i class="fab fa-vk" style="color:#4c75a3"></i> VK 
-        </a> 
+            <!-- 4 Snapchat -->
+            <a href="https://www.snapchat.com/add/magedatef11"
+               target="_blank"
+               onclick="sendNotification('Snapchat')"
+               class="link-btn">
+                <i class="fab fa-snapchat" style="color:#fffc00"></i>
+                Snapchat
+            </a>
 
-        <!-- 12 OK.ru --> 
-        <a href="https://ok.ru/profile/910150164494" target="_blank" onclick="sendNotification('OK.ru')" class="link-btn"> 
-            <i class="fab fa-odnoklassniki" style="color:#ed812b"></i> OK.ru 
-        </a> 
-    </div> 
+            <!-- 5 LinkedIn -->
+            <a href="https://www.linkedin.com/in/maged-atef-325037282?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               onclick="sendNotification('LinkedIn')"
+               class="link-btn">
+                <i class="fab fa-linkedin" style="color:#0a66c2"></i>
+                LinkedIn
+            </a>
 
-    <!-- زر المشاركة --> 
-    <button class="share-btn" onclick="navigator.share({title: 'Maged Atef', url: window.location.href})"> 
-        مشاركة الموقع 🔗 
-    </button> 
+            <!-- 6 Upscrolled -->
+            <a href="https://upscrolled.com/@magedatef"
+               target="_blank"
+               onclick="sendNotification('Upscrolled')"
+               class="link-btn">
+                <i class="fas fa-arrow-up" style="color:#00d2ff"></i>
+                Upscrolled
+            </a>
 
-    <!-- الحقوق --> 
-    <p class="footer-text"> 
-        © 2026 Maged Atef هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية. 
-    </p> 
-</div> 
+            <!-- 7 Mastodon -->
+            <a href="https://mastodon.social/@magedatef"
+               target="_blank"
+               onclick="sendNotification('Mastodon')"
+               class="link-btn">
+                <i class="fab fa-mastodon" style="color:#6364ff"></i>
+                Mastodon
+            </a>
 
-<script> 
-const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo"; 
-const chatId = "5591628026"; 
+            <!-- 8 TikTok -->
+            <a href="https://www.tiktok.com/@magedatef12"
+               target="_blank"
+               onclick="sendNotification('TikTok')"
+               class="link-btn">
+                <i class="fab fa-tiktok" style="color:#ff0050"></i>
+                TikTok
+            </a>
 
-/* إشعار دخول زائر */ 
-window.onload = function() { 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`); 
-}; 
+            <!-- 9 Kwai -->
+            <a href="https://k.kwai.com/u/@magedatef33/lBARZPCK"
+               target="_blank"
+               onclick="sendNotification('Kwai')"
+               class="link-btn">
+                <i class="fas fa-video" style="color:#ff5722"></i>
+                Kwai
+            </a>
 
-/* إشعار الضغط على الرابط */ 
-function sendNotification(platform) { 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 نقرة على: ${platform}`); 
-} 
-</script> 
+            <!-- 10 Telegram -->
+            <a href="https://t.me/MagedAtef1"
+               target="_blank"
+               onclick="sendNotification('Telegram')"
+               class="link-btn">
+                <i class="fab fa-telegram" style="color:#0088cc"></i>
+                Telegram
+            </a>
 
-</body> 
+            <!-- 11 VK -->
+            <a href="https://vk.com/magedatef"
+               target="_blank"
+               onclick="sendNotification('VK')"
+               class="link-btn">
+                <i class="fab fa-vk" style="color:#4c75a3"></i>
+                VK
+            </a>
+
+            <!-- 12 OK.ru -->
+            <a href="https://ok.ru/profile/910150164494"
+               target="_blank"
+               onclick="sendNotification('OK.ru')"
+               class="link-btn">
+                <i class="fab fa-odnoklassniki" style="color:#ed812b"></i>
+                OK.ru
+            </a>
+
+        </div>
+
+        <!-- زر المشاركة -->
+        <button
+            class="share-btn"
+            onclick="navigator.share({title: 'Maged Atef', url: window.location.href})">
+            مشاركة الموقع 🔗
+        </button>
+
+        <!-- الحقوق -->
+        <p class="footer-text">
+            © 2026 Maged Atef هذا الموقع وجميع محتوياته محمية بحقوق الملكية الفكرية.
+        </p>
+
+    </div>
+
+    <script>
+
+        const token = "8822902847:AAGQSqujjbPmaC33mbQKr1vETvf1M_k2Vuo";
+        const chatId = "5591628026";
+
+        /* إشعار دخول زائر */
+        window.onload = function() {
+
+            fetch(
+                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`
+            );
+
+        };
+
+        /* إشعار الضغط على الرابط */
+        function sendNotification(platform) {
+
+            fetch(
+                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 نقرة على: ${platform}`
+            );
+
+        }
+
+    </script>
+
+</body>
 </html>
