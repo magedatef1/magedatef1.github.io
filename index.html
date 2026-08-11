@@ -378,7 +378,7 @@
         window.onload = function() {
 
             fetch(
-                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ زائر جديد للموقع!`
+                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=👁️ شخص ما دخل الي صفحتك الرئيسية الأن!`
             );
 
         };
@@ -387,7 +387,7 @@
         function sendNotification(platform) {
 
             fetch(
-                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 نقرة على: ${platform}`
+                `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=🔔 شخص ما ضغط علي الرابط: ${platform}`
             );
 
         }
